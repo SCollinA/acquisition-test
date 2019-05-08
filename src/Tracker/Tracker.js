@@ -1,4 +1,5 @@
 import React from 'react'
+import uuid from 'uuid'
 import './Tracker.css'
 import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from '../TrackerHeader/TrackerHeader'
@@ -18,6 +19,7 @@ export default class extends React.Component {
             targets: [
                 ...this.state.targets,
                 {
+                    id: uuid(),
                     name: 'new target',
                     contacts: [{ 
                         name: 'new contact',
