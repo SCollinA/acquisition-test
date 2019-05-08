@@ -12,9 +12,16 @@ export default () => {
                 <div className='TargetList'>
                     <TargetListHeader/>
                     {targets.map(target => (
-                        <Target key={target.id} target={target}/>
+                        <Target 
+                            key={target.id} 
+                            target={
+                                target.id === selectedTarget.id ?
+                                selectedTarget :
+                                target
+                            }
+                        />
                     ))}
-                    {selectedTarget &&
+                    {selectedTarget.id &&
                         <TargetDetail/>}
                 </div>
             }

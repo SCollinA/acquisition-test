@@ -36,7 +36,10 @@ export default class extends React.Component {
         const selectTarget = selectedTarget => this.setState({
             selectedTarget
         })
-        const editTarget = () => this.setState({
+        const editTarget = selectedTarget => this.setState({
+            selectedTarget
+        })
+        const saveTarget = () => this.setState({
             targets: [
                 ...this.state.targets.filter(target => target.id !== this.state.selectedTarget.id),
                 this.state.selectedTarget
@@ -47,6 +50,7 @@ export default class extends React.Component {
             addTarget,
             selectTarget,
             editTarget,
+            saveTarget,
             deleteTarget: () => null,
             selectedTarget: {},
             comparingTargets: [],
