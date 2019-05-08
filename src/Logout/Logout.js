@@ -2,6 +2,10 @@ import React from 'react'
 
 export default ({ setIsLoggedIn }) => {
     return (
-        <button onClick={() => setIsLoggedIn(false)}/>
+        <button 
+            onClick={() => setIsLoggedIn(false)}
+        >
+            Logout
+        </button>
     )
 }

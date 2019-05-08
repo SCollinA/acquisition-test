@@ -11,11 +11,11 @@ function App() {
       <header className="App-header">
         <h1>Aquisition Tracker</h1>
         {isLoggedIn && 
-         <Logout setIsLoggedIn={setIsLoggedIn}/>}
+          <Logout setIsLoggedIn={setIsLoggedIn}/>}
       </header>
       {(!isLoggedIn && 
         <Login setIsLoggedIn={setIsLoggedIn}/>) ||
-      <Tracker/>}
+        <Tracker/>}
     </div>
   );
 }

@@ -5,7 +5,10 @@ export default ({ setIsLoggedIn }) => {
     return (
         <form 
             name='loginForm' 
-            onSubmit={() => setIsLoggedIn(true)}
+            onSubmit={event => {
+                event.preventDefault()
+                setIsLoggedIn(true)}
+            }
             onReset={() => null}
         >
             <input type='password' name='password' placeholder='password'/>
