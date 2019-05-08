@@ -2,6 +2,8 @@ import React from 'react'
 
 export default () => {
     return (
-        <button>add target</button>
+        <button
+            onClick={() => null}
+        >add target</button>
     )
 }
