@@ -4,6 +4,13 @@ import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from '../TrackerHeader/TrackerHeader'
 import TargetList from '../TargetList/TargetList'
 
+const statusTypes = [
+    'researching',
+    'pending approval',
+    'approved',
+    'denied',
+]
+
 export default class extends React.Component {
     constructor(props) {
         super(props)
@@ -12,6 +19,14 @@ export default class extends React.Component {
                 ...this.state.targets,
                 {
                     name: 'new target',
+                    contacts: [{ 
+                        name: 'new contact',
+                        phoneNumber: '',
+                    }],
+                    keyMetrics: {
+                        revenue: 100000000,
+                    },
+                    status: statusTypes[0],
                 }
             ]
         })
