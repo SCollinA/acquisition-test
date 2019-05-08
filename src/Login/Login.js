@@ -4,7 +4,7 @@ import './Login.css'
 export default ({ setIsLoggedIn }) => {
     return (
         <form 
-            name='loginForm' 
+            className='Login' 
             onSubmit={event => {
                 event.preventDefault()
                 setIsLoggedIn(true)}

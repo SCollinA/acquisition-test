@@ -1,0 +1,6 @@
+.TargetListHeader {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: solid 5px grey;
+}
