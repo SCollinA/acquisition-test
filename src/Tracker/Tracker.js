@@ -16,23 +16,27 @@ export default class extends React.Component {
     constructor(props) {
         super(props)
         // change below methods to post to backend 
-        const addTarget = () => this.setState({
-            targets: [
-                ...this.state.targets,
-                {
-                    id: uuid(),
-                    name: 'new target',
-                    contacts: [{ 
-                        name: 'new contact',
-                        phoneNumber: '',
-                    }],
-                    keyMetrics: {
-                        revenue: 100000000,
-                    },
-                    status: statusTypes[0],
-                }
-            ]
-        })
+        const addTarget = () => {
+            const newTarget = {
+                id: uuid(),
+                name: 'new target',
+                contacts: [{ 
+                    name: 'new contact',
+                    phoneNumber: '',
+                }],
+                keyMetrics: {
+                    revenue: 100000000,
+                },
+                status: statusTypes[0],
+            }
+            this.setState({
+                targets: [
+                    ...this.state.targets,
+                    newTarget
+                ],
+                selectedTarget: newTarget, 
+            })
+        }
         const selectTarget = selectedTarget => this.setState({
             selectedTarget
         })
@@ -43,7 +47,8 @@ export default class extends React.Component {
             targets: [
                 ...this.state.targets.filter(target => target.id !== this.state.selectedTarget.id),
                 this.state.selectedTarget
-            ]
+            ],
+            selectedTarget: {}
         })
         this.state = {
             targets: [],
