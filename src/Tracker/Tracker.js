@@ -5,7 +5,7 @@ import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from '../TrackerHeader/TrackerHeader'
 import TargetList from '../TargetList/TargetList'
 
-const statusTypes = [
+export const statusTypes = [
     'researching',
     'pending approval',
     'approved',
@@ -50,13 +50,17 @@ export default class extends React.Component {
             ],
             selectedTarget: {}
         })
+        const deleteTarget = () => this.setState({
+            targets: this.state.targets.filter(target => target.id !== this.state.selectedTarget.id),
+            selectedTarget: {}
+        })
         this.state = {
             targets: [],
             addTarget,
             selectTarget,
             editTarget,
             saveTarget,
-            deleteTarget: () => null,
+            deleteTarget,
             selectedTarget: {},
             comparingTargets: [],
             searchingTargets: [],
