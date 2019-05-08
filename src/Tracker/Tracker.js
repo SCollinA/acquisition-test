@@ -15,6 +15,7 @@ const statusTypes = [
 export default class extends React.Component {
     constructor(props) {
         super(props)
+        // change below methods to post to backend 
         const addTarget = () => this.setState({
             targets: [
                 ...this.state.targets,
@@ -32,11 +33,20 @@ export default class extends React.Component {
                 }
             ]
         })
+        const selectTarget = selectedTarget => this.setState({
+            selectedTarget
+        })
+        const editTarget = () => this.setState({
+            targets: [
+                ...this.state.targets.filter(target => target.id !== this.state.selectedTarget.id),
+                this.state.selectedTarget
+            ]
+        })
         this.state = {
             targets: [],
             addTarget,
-            selectTarget: () => null,
-            editTarget: () => null,
+            selectTarget,
+            editTarget,
             deleteTarget: () => null,
             selectedTarget: {},
             comparingTargets: [],

@@ -11,8 +11,8 @@ export default () => {
             {({ targets, selectedTarget }) => 
                 <div className='TargetList'>
                     <TargetListHeader/>
-                    {targets.map((target, index) => (
-                        <Target key={index} target={target}/>
+                    {targets.map(target => (
+                        <Target key={target.id} target={target}/>
                     ))}
                     {selectedTarget &&
                         <TargetDetail/>}
