@@ -1,10 +1,11 @@
 import React from 'react'
+import uuid from 'uuid'
 import './Tracker.css'
 import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from '../TrackerHeader/TrackerHeader'
 import TargetList from '../TargetList/TargetList'
 
-const statusTypes = [
+export const statusTypes = [
     'researching',
     'pending approval',
     'approved',
@@ -14,28 +15,52 @@ const statusTypes = [
 export default class extends React.Component {
     constructor(props) {
         super(props)
-        const addTarget = () => this.setState({
+        // change below methods to post to backend 
+        const addTarget = () => {
+            const newTarget = {
+                id: uuid(),
+                name: 'new target',
+                contacts: [{ 
+                    name: 'new contact',
+                    phoneNumber: '',
+                }],
+                keyMetrics: {
+                    revenue: 100000000,
+                },
+                status: statusTypes[0],
+            }
+            this.setState({
+                targets: [
+                    ...this.state.targets,
+                    newTarget
+                ],
+                selectedTarget: newTarget, 
+            })
+        }
+        const selectTarget = selectedTarget => this.setState({
+            selectedTarget
+        })
+        const editTarget = selectedTarget => this.setState({
+            selectedTarget
+        })
+        const saveTarget = () => this.setState({
             targets: [
-                ...this.state.targets,
-                {
-                    name: 'new target',
-                    contacts: [{ 
-                        name: 'new contact',
-                        phoneNumber: '',
-                    }],
-                    keyMetrics: {
-                        revenue: 100000000,
-                    },
-                    status: statusTypes[0],
-                }
-            ]
+                ...this.state.targets.filter(target => target.id !== this.state.selectedTarget.id),
+                this.state.selectedTarget
+            ],
+            selectedTarget: {}
+        })
+        const deleteTarget = () => this.setState({
+            targets: this.state.targets.filter(target => target.id !== this.state.selectedTarget.id),
+            selectedTarget: {}
         })
         this.state = {
             targets: [],
             addTarget,
-            selectTarget: () => null,
-            editTarget: () => null,
-            deleteTarget: () => null,
+            selectTarget,
+            editTarget,
+            saveTarget,
+            deleteTarget,
             selectedTarget: {},
             comparingTargets: [],
             searchingTargets: [],
