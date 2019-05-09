@@ -15,9 +15,7 @@ export default () => {
                                 name='contactName'
                                 defaultValue={contact.name}
                                 onChange={({ target }) => {
-                                    editingTarget.contacts.find(currentContact => {
-                                        return currentContact.id === contact.id
-                                    }).name = target.value
+                                    contact.name = target.value
                                     editTarget({
                                         ...editingTarget,
                                         contacts: editingTarget.contacts
@@ -29,9 +27,7 @@ export default () => {
                                 name='contactPhone'
                                 value={contact.phoneNumber}
                                 onChange={({ target }) => {
-                                    editingTarget.contacts.find(currentContact => {
-                                        return currentContact.id === contact.id
-                                    }).phoneNumber = target.value
+                                    contact.phoneNumber = target.value
                                     editTarget({
                                         ...editingTarget,
                                         contacts: editingTarget.contacts
