@@ -33,7 +33,7 @@ export default () => {
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
-                                    name: target.value
+                                    name: target.value,
                                 })
                             }}
                         />

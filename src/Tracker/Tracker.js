@@ -5,6 +5,8 @@ import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from './TrackerHeader/TrackerHeader'
 import TargetList from './TargetList/TargetList'
 
+import mockTargets from '../mockTargets'
+
 export const statusTypes = [
     'researching',
     'pending approval',
@@ -28,6 +30,9 @@ export default class extends React.Component {
                     revenue: 100000000,
                 },
                 status: statusTypes[0],
+                history: [
+                    `added ${new Date().toLocaleString()}`
+                ]
             }
             this.setState({
                 targets: [
@@ -49,6 +54,7 @@ export default class extends React.Component {
                 ...this.state.targets.filter(target => target.id !== this.state.editingTarget.id),
                 this.state.editingTarget
             ],
+            selectedTarget: this.state.editingTarget,
             editingTarget: {}
         })
         const deleteTarget = () => this.setState({
@@ -57,7 +63,7 @@ export default class extends React.Component {
             selectedTarget: {}
         })
         this.state = {
-            targets: [],
+            targets: mockTargets,
             addTarget,
             selectTarget,
             editTarget,

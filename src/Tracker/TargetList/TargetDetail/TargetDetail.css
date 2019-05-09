@@ -1,0 +1,17 @@
+.TargetDetail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: solid 5px black;
+    margin: 2%;
+    cursor: pointer;
+}
+
+.editButton {
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
