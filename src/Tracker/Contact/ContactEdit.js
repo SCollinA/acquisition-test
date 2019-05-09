@@ -38,6 +38,22 @@ export default () => {
                                     })
                                 }}
                             />
+                            <input
+                                type='button'
+                                className='removeContact'
+                                onClick={event => {
+                                    event.stopPropagation()
+                                    editTarget({
+                                        ...editingTarget,
+                                        contacts: [
+                                            ...editingTarget.contacts.filter(currentContact => {
+                                                return currentContact.id !== contact.id
+                                            })
+                                        ]
+                                    })
+                                }}
+                                value='Remove Contact'
+                            />
                         </div>
                     ))}
                     <input 
