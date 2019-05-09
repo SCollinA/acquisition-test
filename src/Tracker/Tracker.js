@@ -22,7 +22,8 @@ export default class extends React.Component {
             const newTarget = {
                 id: uuid(),
                 name: 'new target',
-                contacts: [{ 
+                contacts: [{
+                    id: uuid(),
                     name: 'new contact',
                     phoneNumber: '',
                 }],

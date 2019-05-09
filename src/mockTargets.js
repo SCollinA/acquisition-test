@@ -12,6 +12,7 @@ export default [
         id: uuid(),
         name: 'target 1',
         contacts: [{ 
+            id: uuid(),
             name: 'new contact',
             phoneNumber: '',
         }],
@@ -27,6 +28,7 @@ export default [
         id: uuid(),
         name: 'target 2',
         contacts: [{ 
+            id: uuid(),
             name: 'new contact',
             phoneNumber: '',
         }],
@@ -42,6 +44,7 @@ export default [
         id: uuid(),
         name: 'target 3',
         contacts: [{ 
+            id: uuid(),
             name: 'new contact',
             phoneNumber: '',
         }],
