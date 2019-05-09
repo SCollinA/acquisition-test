@@ -8,7 +8,6 @@ export default ({ setIsLoggedIn }) => {
             className='Login' 
             onSubmit={event => {
                 event.preventDefault()
-                console.log(event.target.password.value, process.env.LOGIN_PW)
                 if (event.target.password.value === secretPW) {
                     setIsLoggedIn(true)
                 } else {
