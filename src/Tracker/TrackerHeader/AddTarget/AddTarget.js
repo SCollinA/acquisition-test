@@ -7,7 +7,9 @@ export default () => {
             {({ addTarget }) => (
                 <button
                     onClick={addTarget}
-                >add target</button>
+                >
+                    add target
+                </button>
             )}
         </TrackerContext.Consumer>
     )
