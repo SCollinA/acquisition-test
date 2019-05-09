@@ -16,7 +16,7 @@ export default () => {
             }) => (
                 <div 
                     className='targetEditWrapper'
-                    onClick={() => editTarget({})}
+                    onClick={() => saveTarget()}
                 >
                     <form
                         className='TargetEdit'
