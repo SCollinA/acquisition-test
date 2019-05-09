@@ -97,7 +97,7 @@ export default () => {
                                     type='radio'
                                     name='status'
                                     value='researching'
-                                    checked={editingTarget.status === statusTypes[0]}
+                                    defaultChecked={editingTarget.status === statusTypes[0]}
                                 />
                             </label>
                             <label>
@@ -106,7 +106,7 @@ export default () => {
                                     type='radio'
                                     name='status'
                                     value='pending approval'
-                                    checked={editingTarget.status === statusTypes[1]}
+                                    defaultChecked={editingTarget.status === statusTypes[1]}
                                 />
                             </label>
                             <label>
@@ -115,7 +115,7 @@ export default () => {
                                     type='radio'
                                     name='status'
                                     value='approved'
-                                    checked={editingTarget.status === statusTypes[2]}
+                                    defaultChecked={editingTarget.status === statusTypes[2]}
                                 />
                             </label>
                             <label>
@@ -124,7 +124,7 @@ export default () => {
                                     type='radio'
                                     name='status'
                                     value='denied'
-                                    checked={editingTarget.status === statusTypes[3]}
+                                    defaultChecked={editingTarget.status === statusTypes[3]}
                                 />
                             </label>
 
