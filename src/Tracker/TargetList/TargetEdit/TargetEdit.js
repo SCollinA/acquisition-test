@@ -8,15 +8,14 @@ export default () => {
         <TrackerContext.Consumer>
             {({ 
                 targets,
-                selectedTarget, 
-                selectTarget, 
+                editingTarget, 
                 editTarget, 
                 saveTarget, 
                 deleteTarget 
             }) => (
                 <div 
                     className='targetEditWrapper'
-                    onClick={() => selectTarget({})}
+                    onClick={() => editTarget({})}
                 >
                     <form
                         className='TargetEdit'
@@ -25,15 +24,15 @@ export default () => {
                             event.preventDefault()
                             saveTarget()
                         }}
-                        onReset={() => selectTarget(targets.find(target => target.id === selectedTarget.id))}
+                        onReset={() => editTarget(targets.find(target => target.id === editingTarget.id))}
                     >
                         <input 
                             type='text' 
                             name='name'
-                            value={selectedTarget.name}
+                            value={editingTarget.name}
                             onChange={({ target }) => {
                                 editTarget({
-                                    ...selectedTarget,
+                                    ...editingTarget,
                                     name: target.value
                                 })
                             }}
@@ -43,12 +42,12 @@ export default () => {
                             <input 
                                 type='text' 
                                 name='contactName'
-                                value={selectedTarget.contacts[0].name}
+                                value={editingTarget.contacts[0].name}
                                 onChange={({ target }) => {
                                     editTarget({
-                                        ...selectedTarget,
+                                        ...editingTarget,
                                         contacts: [{
-                                            ...selectedTarget.contacts[0],
+                                            ...editingTarget.contacts[0],
                                             name: target.value
                                         }]
                                     })
@@ -57,12 +56,12 @@ export default () => {
                             <input 
                                 type='text' 
                                 name='contactPhone'
-                                value={selectedTarget.contacts[0].phoneNumber}
+                                value={editingTarget.contacts[0].phoneNumber}
                                 onChange={({ target }) => {
                                     editTarget({
-                                        ...selectedTarget,
+                                        ...editingTarget,
                                         contacts: [{
-                                            ...selectedTarget.contacts[0],
+                                            ...editingTarget.contacts[0],
                                             phoneNumber: target.value
                                         }]
                                     })
@@ -72,12 +71,12 @@ export default () => {
                         <input 
                             type='number'
                             name='keyMetrics'
-                            value={selectedTarget.keyMetrics.revenue}
+                            value={editingTarget.keyMetrics.revenue}
                             onChange={({ target }) => {
                                 editTarget({
-                                    ...selectedTarget,
+                                    ...editingTarget,
                                     keyMetrics: {
-                                        ...selectedTarget.keyMetrics,
+                                        ...editingTarget.keyMetrics,
                                         revenue: target.value
                                     }
                                 })
@@ -86,7 +85,7 @@ export default () => {
                         <fieldset 
                             onChange={({ target }) => {
                                 editTarget({
-                                    ...selectedTarget,
+                                    ...editingTarget,
                                     status: target.value
                                 })
                             }}
@@ -98,7 +97,7 @@ export default () => {
                                     type='radio'
                                     name='status'
                                     value='researching'
-                                    checked={selectedTarget.status === statusTypes[0]}
+                                    checked={editingTarget.status === statusTypes[0]}
                                 />
                             </label>
                             <label>
@@ -107,7 +106,7 @@ export default () => {
                                     type='radio'
                                     name='status'
                                     value='pending approval'
-                                    checked={selectedTarget.status === statusTypes[1]}
+                                    checked={editingTarget.status === statusTypes[1]}
                                 />
                             </label>
                             <label>
@@ -116,7 +115,7 @@ export default () => {
                                     type='radio'
                                     name='status'
                                     value='approved'
-                                    checked={selectedTarget.status === statusTypes[2]}
+                                    checked={editingTarget.status === statusTypes[2]}
                                 />
                             </label>
                             <label>
@@ -125,7 +124,7 @@ export default () => {
                                     type='radio'
                                     name='status'
                                     value='denied'
-                                    checked={selectedTarget.status === statusTypes[3]}
+                                    checked={editingTarget.status === statusTypes[3]}
                                 />
                             </label>
 
@@ -134,7 +133,7 @@ export default () => {
                             <input type='submit' value='save'/>
                             <input type='reset' value='reset'/>
                             <input type='button' value='cancel'
-                                onClick={() => selectTarget({})}
+                                onClick={() => editTarget({})}
                                 />
                             <input type='button' value='delete'
                                 onClick={() => deleteTarget()}
