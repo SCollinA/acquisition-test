@@ -1,4 +1,5 @@
 import React from 'react'
+import uuid from 'uuid'
 import TrackerContext from '../../Context/TrackerContext'
 
 export default () => {
@@ -12,17 +13,14 @@ export default () => {
                             <input
                                 type='text' 
                                 name='contactName'
-                                value={contact.name}
+                                defaultValue={contact.name}
                                 onChange={({ target }) => {
+                                    editingTarget.contacts.find(currentContact => {
+                                        return currentContact.id === contact.id
+                                    }).name = target.value
                                     editTarget({
                                         ...editingTarget,
-                                        contacts: [
-                                            ...editingTarget.contacts.filter(currentContact => currentContact.id !== contact.id),
-                                            {
-                                                ...contact,
-                                                name: target.value
-                                            }
-                                        ]
+                                        contacts: editingTarget.contacts
                                     })
                                 }}
                             />
@@ -31,20 +29,37 @@ export default () => {
                                 name='contactPhone'
                                 value={contact.phoneNumber}
                                 onChange={({ target }) => {
+                                    editingTarget.contacts.find(currentContact => {
+                                        return currentContact.id === contact.id
+                                    }).phoneNumber = target.value
                                     editTarget({
                                         ...editingTarget,
-                                        contacts: [
-                                            ...editingTarget.contacts.filter(currentContact => currentContact.id !== contact.id),
-                                            {
-                                                ...contact,
-                                                phoneNumber: target.value
-                                            }
-                                        ]
+                                        contacts: editingTarget.contacts
                                     })
                                 }}
                             />
                         </div>
                     ))}
+                    <input 
+                        type='button' 
+                        className='addContact'
+                        value='Add Contact'
+                        onClick={event => {
+                            event.stopPropagation()
+                            editTarget({
+                                ...editingTarget,
+                                contacts: [
+                                    ...editingTarget.contacts,
+                                    { 
+                                        id: uuid(),
+                                        name: 'new contact',
+                                        phoneNumber: '',
+                                    }
+                                ]
+                            })
+                        }}
+                    />
+                    {/* add, edit, delete contacts */}
                 </fieldset>       
             )}
         </TrackerContext.Consumer>

@@ -43,11 +43,18 @@ export default [
     {
         id: uuid(),
         name: 'target 3',
-        contacts: [{ 
-            id: uuid(),
-            name: 'new contact',
-            phoneNumber: '',
-        }],
+        contacts: [
+            { 
+                id: uuid(),
+                name: 'new contact',
+                phoneNumber: '',
+            },
+            { 
+                id: uuid(),
+                name: 'new contact',
+                phoneNumber: '',
+            },
+        ],
         keyMetrics: {
             revenue: 100000000,
         },
