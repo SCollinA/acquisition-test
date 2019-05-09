@@ -2,7 +2,7 @@ import React from 'react'
 import uuid from 'uuid'
 import './Tracker.css'
 import TrackerContext from '../Context/TrackerContext'
-import TrackerHeader from '../TrackerHeader/TrackerHeader'
+import TrackerHeader from './TrackerHeader/TrackerHeader'
 import TargetList from './TargetList/TargetList'
 
 export const statusTypes = [
@@ -40,18 +40,19 @@ export default class extends React.Component {
         const selectTarget = selectedTarget => this.setState({
             selectedTarget
         })
-        const editTarget = selectedTarget => this.setState({
-            selectedTarget
+        const editTarget = editingTarget => this.setState({
+            editingTarget
         })
         const saveTarget = () => this.setState({
             targets: [
                 ...this.state.targets.filter(target => target.id !== this.state.selectedTarget.id),
                 this.state.selectedTarget
             ],
-            selectedTarget: {}
+            editingTarget: {}
         })
         const deleteTarget = () => this.setState({
             targets: this.state.targets.filter(target => target.id !== this.state.selectedTarget.id),
+            editingTarget: {},
             selectedTarget: {}
         })
         this.state = {
@@ -62,6 +63,7 @@ export default class extends React.Component {
             saveTarget,
             deleteTarget,
             selectedTarget: {},
+            editingTarget: {},
             comparingTargets: [],
             searchingTargets: [],
         }
