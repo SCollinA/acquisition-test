@@ -3,7 +3,7 @@ import uuid from 'uuid'
 import './Tracker.css'
 import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from '../TrackerHeader/TrackerHeader'
-import TargetList from '../TargetList/TargetList'
+import TargetList from './TargetList/TargetList'
 
 export const statusTypes = [
     'researching',

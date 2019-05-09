@@ -1,7 +1,7 @@
 import React from 'react'
-import './TargetDetail.css'
-import TrackerContext from '../Context/TrackerContext'
-import { statusTypes } from '../Tracker/Tracker'
+import './TargetEdit.css'
+import TrackerContext from '../../../Context/TrackerContext'
+import { statusTypes } from '../../Tracker'
 
 export default () => {
     return (
@@ -15,11 +15,11 @@ export default () => {
                 deleteTarget 
             }) => (
                 <div 
-                    className='targetDetailWrapper'
+                    className='targetEditWrapper'
                     onClick={() => selectTarget({})}
                 >
                     <form
-                        className='TargetDetail'
+                        className='TargetEdit'
                         onClick={event => event.stopPropagation()}
                         onSubmit={event => {
                             event.preventDefault()

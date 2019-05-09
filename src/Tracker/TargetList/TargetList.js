@@ -1,9 +1,9 @@
 import React from 'react'
-import TrackerContext from '../Context/TrackerContext'
+import TrackerContext from '../../Context/TrackerContext'
 import './TargetList.css'
-import TargetListHeader from '../TargetListHeader/TargetListHeader';
-import Target from '../Target/Target'
-import TargetDetail from '../TargetDetail/TargetDetail';
+import TargetListHeader from './TargetListHeader/TargetListHeader';
+import Target from '../../Target/Target'
+import TargetEdit from './TargetEdit/TargetEdit';
 
 export default () => {
     return (
@@ -22,7 +22,7 @@ export default () => {
                         />
                     ))}
                     {selectedTarget.id &&
-                        <TargetDetail/>}
+                        <TargetEdit/>}
                 </div>
             }
         </TrackerContext.Consumer>
