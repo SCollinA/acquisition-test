@@ -12,6 +12,7 @@ export default [
         id: uuid(),
         name: 'target 1',
         contacts: [{ 
+            id: uuid(),
             name: 'new contact',
             phoneNumber: '',
         }],
@@ -27,6 +28,7 @@ export default [
         id: uuid(),
         name: 'target 2',
         contacts: [{ 
+            id: uuid(),
             name: 'new contact',
             phoneNumber: '',
         }],
@@ -41,10 +43,18 @@ export default [
     {
         id: uuid(),
         name: 'target 3',
-        contacts: [{ 
-            name: 'new contact',
-            phoneNumber: '',
-        }],
+        contacts: [
+            { 
+                id: uuid(),
+                name: 'new contact',
+                phoneNumber: '',
+            },
+            { 
+                id: uuid(),
+                name: 'new contact',
+                phoneNumber: '',
+            },
+        ],
         keyMetrics: {
             revenue: 100000000,
         },

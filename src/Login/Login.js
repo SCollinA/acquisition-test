@@ -16,7 +16,22 @@ export default ({ setIsLoggedIn }) => {
             }}
             onReset={() => null}
         >
-            <input type='password' name='password' placeholder='password'/>
+            <input 
+                style={{
+                    display: 'none'
+                }}
+                autoComplete={'username'} 
+                type='text' 
+                name='adminUsername' 
+                placeholder='no username'
+            />
+            <input 
+                type='password' 
+                name='password' 
+                placeholder='password'
+                autoComplete={'current-password'}
+                autoFocus
+            />
             <input type='submit' name='submit' value='Login'/>
             <input type='reset' name='reset' value='Reset'/>
         </form>

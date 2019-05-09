@@ -2,6 +2,7 @@ import React from 'react'
 import './TargetEdit.css'
 import TrackerContext from '../../../Context/TrackerContext'
 import { statusTypes } from '../../Tracker'
+import ContactEdit from '../../Contact/ContactEdit';
 
 export default () => {
     return (
@@ -15,7 +16,7 @@ export default () => {
             }) => (
                 <div 
                     className='targetEditWrapper'
-                    onClick={() => editTarget({})}
+                    onClick={() => saveTarget()}
                 >
                     <form
                         className='TargetEdit'
@@ -37,37 +38,7 @@ export default () => {
                                 })
                             }}
                         />
-                        <fieldset>
-                            <legend>Primary Contact</legend>
-                            <input 
-                                type='text' 
-                                name='contactName'
-                                value={editingTarget.contacts[0].name}
-                                onChange={({ target }) => {
-                                    editTarget({
-                                        ...editingTarget,
-                                        contacts: [{
-                                            ...editingTarget.contacts[0],
-                                            name: target.value
-                                        }]
-                                    })
-                                }}
-                            />
-                            <input 
-                                type='text' 
-                                name='contactPhone'
-                                value={editingTarget.contacts[0].phoneNumber}
-                                onChange={({ target }) => {
-                                    editTarget({
-                                        ...editingTarget,
-                                        contacts: [{
-                                            ...editingTarget.contacts[0],
-                                            phoneNumber: target.value
-                                        }]
-                                    })
-                                }}
-                            />
-                        </fieldset>
+                        <ContactEdit/>
                         <input 
                             type='number'
                             name='keyMetrics'

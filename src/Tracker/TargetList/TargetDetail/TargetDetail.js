@@ -2,6 +2,7 @@ import React from 'react'
 import './TargetDetail.css'
 import TrackerContext from '../../../Context/TrackerContext'
 import TargetEditButton from './TargetEditButton';
+import Contact from '../../Contact/Contact';
 
 export default ({ target }) => {
     return (
@@ -14,10 +15,7 @@ export default ({ target }) => {
                     <TargetEditButton/>
                     <h1>{target.name}</h1>
                     {target.contacts.map((contact, index) => (
-                        <div className='contact' key={index}>
-                            <h1>{contact.name}</h1>
-                            <h1>{contact.phoneNumber}</h1>
-                        </div>
+                        <Contact key={index} contact={contact}/>
                         // make a contact component
                         // add 'add contact' button here
                         // add 'edit contact' button here
