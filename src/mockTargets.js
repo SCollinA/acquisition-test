@@ -10,7 +10,13 @@ export const statusTypes = [
 export default [
     {
         id: uuid(),
-        name: 'target 1',
+        info: {
+            name: 'target 1',
+            address: '123 Main St., Los Angeles, California, 11111',
+            employeesCount: 300,
+            foundedDate: '12-1-2018',
+            isPublic: true,
+        },
         contacts: [{ 
             id: uuid(),
             name: 'new contact',
@@ -29,7 +35,13 @@ export default [
     },
     {
         id: uuid(),
-        name: 'target 2',
+        info: {
+            name: 'target 2',
+            address: '125 Main St., Los Angeles, California, 11111',
+            employeesCount: 300,
+            foundedDate: '12-1-2018',
+            isPublic: true,
+        },        
         contacts: [{ 
             id: uuid(),
             name: 'new contact',
@@ -48,7 +60,13 @@ export default [
     },
     {
         id: uuid(),
-        name: 'target 3',
+        info: {
+            name: 'target 2',
+            address: '127 Main St., Los Angeles, California, 11111',
+            employeesCount: 300,
+            foundedDate: '12-1-2018',
+            isPublic: true,
+        },        
         contacts: [
             { 
                 id: uuid(),
