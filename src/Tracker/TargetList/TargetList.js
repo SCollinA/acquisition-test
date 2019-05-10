@@ -9,7 +9,7 @@ import TargetDetail from './TargetDetail/TargetDetail'
 export default () => {
     return (
         <TrackerContext.Consumer>
-            {({ targets, selectedTarget, editingTarget }) => 
+            {({ targets, selectedTarget, editingTarget }) => (
                 <div className='TargetList'>
                     <TargetListHeader/>
                     {targets.map(target => {
@@ -33,7 +33,7 @@ export default () => {
                     {editingTarget.id &&
                         <TargetEdit/>}
                 </div>
-            }
+            )}
         </TrackerContext.Consumer>
     )
 }

@@ -61,7 +61,7 @@ export default [
     {
         id: uuid(),
         info: {
-            name: 'target 2',
+            name: 'target 3',
             address: '127 Main St., Los Angeles, California, 11111',
             employeesCount: 300,
             foundedDate: '12-1-2018',

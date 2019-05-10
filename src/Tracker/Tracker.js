@@ -21,7 +21,13 @@ export default class extends React.Component {
         const addTarget = () => {
             const newTarget = {
                 id: uuid(),
-                name: 'new target',
+                info: {
+                    name: 'new target',
+                    address: '123 Main St., New York City, NY, 10101',
+                    employeesCount: 1,
+                    foundedDate: '1-1-18',
+                    isPublic: false,
+                },
                 contacts: [{
                     id: uuid(),
                     name: 'new contact',
