@@ -144,7 +144,9 @@ export default class extends React.Component {
                                     'what is field',
                                     field,
                                     'and value',
-                                    sortObject[field]
+                                    sortObject[field],
+                                    'and order',
+                                    order
                                 )
                                 var sign = sortObject[field] ?
                                     1 : -1
@@ -157,9 +159,8 @@ export default class extends React.Component {
                                             b.info.name
                                         )
                                         if (a.info.name > b.info.name) {
-                                            order = 1
-                                        } else {
-                                            order = -1
+                                            order++                                        } else {
+                                            order--
                                         }
                                         break
                                     case 'employeesCount':
@@ -169,9 +170,9 @@ export default class extends React.Component {
                                             b.info.employeesCount
                                         )
                                         if (a.info.employeesCount > b.info.employeesCount) {
-                                            order = 1
+                                            order++
                                         } else {
-                                            order = -1
+                                            order--
                                         }
                                         break
                                     case 'status':
@@ -181,18 +182,18 @@ export default class extends React.Component {
                                             b.status
                                         )
                                         if (statusTypes.indexOf(a.status) > statusTypes.indexOf(b.status)) {
-                                            order = 1
+                                            order++
                                         } else {
-                                            order = -1
+                                            order--
                                         }
                                         break
                                     default:
-                                        order = 0
                                 }
                             }
+                            order *= sign
                         }
                         console.log(order)
-                        return order * sign
+                        return order
                     } else {
                         // if this.state.sortList was empty
                         // code will reach this line

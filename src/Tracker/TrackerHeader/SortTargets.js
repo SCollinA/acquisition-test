@@ -4,34 +4,83 @@ import TrackerContext from '../../Context/TrackerContext'
 export default () => {
     return (
         <TrackerContext.Consumer>
-            {({ addSortObject }) => (
-                <div className='SortTargets'>
-                    <button
-                        className='sortName'
-                        onClick={() => {
-                            addSortObject('name')
-                        }}
+            {({ addSortObject, sortList }) => {
+                const sortClassesObject = {}
+                // loop through sortList
+                sortList.forEach((sortObject, index) => {
+                    // for each sortObject
+                    // add the field in the sortObject
+                    for (const field in sortObject) {
+                        // to sortClassesObject
+                        sortClassesObject[field] = [
+                            sortObject[field],
+                            ` (${index + 1})`
+                        ]
+                        // effectively flattening the sortList
+                        // into an object
+                    }
+                })
+
+                // then interpolate corresponding field
+                // from sortClassesObject
+                // into appropriate input classname
+                // if field value exists
+                return (
+                    <div className='SortTargets'>
+                        <button
+                            className={
+                                `sortName` +
+                                `${sortClassesObject.name !== undefined ?
+                                    sortClassesObject.name[0] === true ?
+                                        ' activeSort sortDown' :
+                                        ' activeSort sortUp' :
+                                    ''}`
+                            }
+                            onClick={() => {
+                                addSortObject('name')
+                            }}
                         >
-                        Name
-                    </button>
-                    <button
-                        className='sortEmployeesCount'
-                        onClick={() => {
-                            addSortObject('employeesCount')
-                        }}
-                    >
-                        Employees Count
-                    </button>
-                    <button
-                        className='sortStatus'
-                        onClick={() => {
-                            addSortObject('status')
-                        }}
+                            Name
+                            {sortClassesObject.name &&
+                                sortClassesObject.name[1]}
+                        </button>
+                        <button
+                            className={
+                                `sortEmployeesCount` +
+                                `${sortClassesObject.employeesCount !== undefined ?
+                                    sortClassesObject.employeesCount[0] === true ?
+                                        ' activeSort sortDown' :
+                                        ' activeSort sortUp' :
+                                    ''}`
+                            }                            
+                            onClick={() => {
+                                addSortObject('employeesCount')
+                            }}
                         >
-                        Status
-                    </button>              
-                </div>
-            )}
+                            Employees Count
+                            {sortClassesObject.employeesCount &&
+                                sortClassesObject.employeesCount[1]}
+                        </button>
+                        <button
+                            className={
+                                `sortStatus` +
+                                `${sortClassesObject.status !== undefined ?
+                                    sortClassesObject.status[0] === true ?
+                                        ' activeSort sortDown' :
+                                        ' activeSort sortUp' :
+                                    ''}`
+                            }                            
+                            onClick={() => {
+                                addSortObject('status')
+                            }}
+                        >
+                            Status
+                            {sortClassesObject.status &&
+                                sortClassesObject.status[1]}
+                        </button>              
+                    </div>
+                )
+            }}
         </TrackerContext.Consumer>
     )
 }

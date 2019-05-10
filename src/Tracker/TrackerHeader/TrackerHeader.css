@@ -5,6 +5,19 @@
 }
 
 .SortTargets {
-    display: block;
-    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.activeSort {
+    border: solid 2px blue;
+}
+
+.sortDown {
+    background-color: green;
+}
+
+.sortUp {
+    background-color: red;
 }
