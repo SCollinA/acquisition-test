@@ -3,6 +3,7 @@ import './TargetEdit.css'
 import TrackerContext from '../../../Context/TrackerContext'
 import ContactEdit from './ContactEdit';
 import StatusEdit from './StatusEdit';
+import KeyMetricsEdit from './KeyMetricsEdit';
 
 export default () => {
     return (
@@ -39,20 +40,7 @@ export default () => {
                             }}
                         />
                         <ContactEdit/>
-                        <input 
-                            type='number'
-                            name='keyMetrics'
-                            value={editingTarget.keyMetrics.revenue}
-                            onChange={({ target }) => {
-                                editTarget({
-                                    ...editingTarget,
-                                    keyMetrics: {
-                                        ...editingTarget.keyMetrics,
-                                        revenue: target.value
-                                    }
-                                })
-                            }}
-                        />
+                        <KeyMetricsEdit/>
                         <StatusEdit/>
                         <div>
                             <input type='submit' value='save'/>
