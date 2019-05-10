@@ -1,6 +1,6 @@
 import React from 'react'
 import uuid from 'uuid'
-import TrackerContext from '../../Context/TrackerContext'
+import TrackerContext from '../../../Context/TrackerContext'
 
 export default () => {
     return (
@@ -71,7 +71,6 @@ export default () => {
                             })
                         }}
                     />
-                    {/* add, edit, delete contacts */}
                 </fieldset>       
             )}
         </TrackerContext.Consumer>
