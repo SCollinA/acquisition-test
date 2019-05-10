@@ -131,15 +131,43 @@ export default class extends React.Component {
             this.setState({
                 targets: this.state.targets.sort((a, b) => {
                     let order = 0
+                    console.log('sorting targets')
                     if (this.state.sortList.length > 0) {
-                        for (const sortObject in this.state.sortList) {
+                        console.log('sorting by sortList')
+                        for (const sortObject of this.state.sortList) {
+                            console.log('what is sortObject', sortObject)
                             // loop through sort objects
                             // get only field from sort object
                             // and it's value (true or false)
-                            for (const field of sortObject) {
+                            for (const field in sortObject) {
+                                console.log(
+                                    'what is field',
+                                    field,
+                                    'and value',
+                                    sortObject[field]
+                                )
+                                var sign = sortObject[field] ?
+                                    1 : -1
                                 // then use switch to sort correct field
                                 switch(field) {
-                                    case 'employeeCount': 
+                                    case 'name':
+                                        console.log(
+                                            'sorting by name',
+                                            a.info.name, 
+                                            b.info.name
+                                        )
+                                        if (a.info.name > b.info.name) {
+                                            order = 1
+                                        } else {
+                                            order = -1
+                                        }
+                                        break
+                                    case 'employeesCount':
+                                        console.log(
+                                            'sorting by employeesCount',
+                                            a.info.employeesCount, 
+                                            b.info.employeesCount
+                                        )
                                         if (a.info.employeesCount > b.info.employeesCount) {
                                             order = 1
                                         } else {
@@ -151,7 +179,8 @@ export default class extends React.Component {
                                 }
                             }
                         }
-                        return order
+                        console.log(order)
+                        return order * sign
                     } else {
                         // if this.state.sortList was empty
                         // code will reach this line
