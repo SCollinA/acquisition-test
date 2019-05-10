@@ -63,7 +63,7 @@ export default class extends React.Component {
             ],
             selectedTarget: this.state.editingTarget,
             editingTarget: {}
-        })
+        }, () => sortTargets())
         const deleteTarget = () => this.setState({
             targets: this.state.targets.filter(target => target.id !== this.state.editingTarget.id),
             editingTarget: {},
@@ -71,12 +71,13 @@ export default class extends React.Component {
         })
         const sortTargets = () => {
             this.setState({
-                targets: this.state.target.sort((a, b) => {
+                targets: this.state.targets.sort((a, b) => {
                     let order = 0
-                    if (a.companyInfo.name > b.companyInfo.name) {
-                        order = -1
-                    } else {
+                    console.log(a, b)
+                    if (a.info.name > b.info.name) {
                         order = 1
+                    } else {
+                        order = -1
                     }
                     return order
                 })
