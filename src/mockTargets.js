@@ -13,7 +13,7 @@ export default [
         info: {
             name: 'target 1',
             address: '123 Main St., Los Angeles, California, 11111',
-            employeesCount: 300,
+            employeesCount: 1,
             foundedDate: '12-1-2018',
             isPublic: true,
         },
@@ -38,7 +38,7 @@ export default [
         info: {
             name: 'target 2',
             address: '125 Main St., Los Angeles, California, 11111',
-            employeesCount: 300,
+            employeesCount: 2,
             foundedDate: '12-1-2018',
             isPublic: true,
         },        
@@ -63,7 +63,7 @@ export default [
         info: {
             name: 'target 3',
             address: '127 Main St., Los Angeles, California, 11111',
-            employeesCount: 300,
+            employeesCount: 3,
             foundedDate: '12-1-2018',
             isPublic: true,
         },        
