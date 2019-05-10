@@ -7,9 +7,11 @@ import AddTarget from './AddTarget';
 export default () => {
     return (
         <header className='TrackerHeader'>
-            <SearchTargets/>
+            <div className='searchAddDiv'>
+                <SearchTargets/>
+                <AddTarget/>
+            </div>
             <SortTargets/>
-            <AddTarget/>
         </header>
     )
 }

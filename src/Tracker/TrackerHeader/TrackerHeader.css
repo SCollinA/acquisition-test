@@ -1,5 +1,10 @@
-.TrackerHeader {
+.searchAddDiv {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.SortTargets {
+    display: block;
+    margin: auto;
 }
