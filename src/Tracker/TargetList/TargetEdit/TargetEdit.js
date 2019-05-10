@@ -1,8 +1,9 @@
 import React from 'react'
 import './TargetEdit.css'
 import TrackerContext from '../../../Context/TrackerContext'
-import { statusTypes } from '../../Tracker'
-import ContactEdit from '../../Contact/ContactEdit';
+import ContactEdit from './ContactEdit';
+import StatusEdit from './StatusEdit';
+import KeyMetricsEdit from './KeyMetricsEdit';
 
 export default () => {
     return (
@@ -39,67 +40,8 @@ export default () => {
                             }}
                         />
                         <ContactEdit/>
-                        <input 
-                            type='number'
-                            name='keyMetrics'
-                            value={editingTarget.keyMetrics.revenue}
-                            onChange={({ target }) => {
-                                editTarget({
-                                    ...editingTarget,
-                                    keyMetrics: {
-                                        ...editingTarget.keyMetrics,
-                                        revenue: target.value
-                                    }
-                                })
-                            }}
-                        />
-                        <fieldset 
-                            onChange={({ target }) => {
-                                editTarget({
-                                    ...editingTarget,
-                                    status: target.value
-                                })
-                            }}
-                        >
-                            <legend>Target Status</legend>
-                            <label>
-                                Researching
-                                <input 
-                                    type='radio'
-                                    name='status'
-                                    value='researching'
-                                    defaultChecked={editingTarget.status === statusTypes[0]}
-                                />
-                            </label>
-                            <label>
-                                Pending approval
-                                <input 
-                                    type='radio'
-                                    name='status'
-                                    value='pending approval'
-                                    defaultChecked={editingTarget.status === statusTypes[1]}
-                                />
-                            </label>
-                            <label>
-                                Approved
-                                <input 
-                                    type='radio'
-                                    name='status'
-                                    value='approved'
-                                    defaultChecked={editingTarget.status === statusTypes[2]}
-                                />
-                            </label>
-                            <label>
-                                Denied
-                                <input 
-                                    type='radio'
-                                    name='status'
-                                    value='denied'
-                                    defaultChecked={editingTarget.status === statusTypes[3]}
-                                />
-                            </label>
-
-                        </fieldset>
+                        <KeyMetricsEdit/>
+                        <StatusEdit/>
                         <div>
                             <input type='submit' value='save'/>
                             <input type='reset' value='reset'/>
