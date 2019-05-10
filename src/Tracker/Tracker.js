@@ -69,6 +69,19 @@ export default class extends React.Component {
             editingTarget: {},
             selectedTarget: {}
         })
+        const sortTargets = () => {
+            this.setState({
+                targets: this.state.target.sort((a, b) => {
+                    let order = 0
+                    if (a.companyInfo.name > b.companyInfo.name) {
+                        order = -1
+                    } else {
+                        order = 1
+                    }
+                    return order
+                })
+            })
+        }
         this.state = {
             targets: mockTargets,
             addTarget,
@@ -79,7 +92,10 @@ export default class extends React.Component {
             selectedTarget: {},
             editingTarget: {},
             comparingTargets: [],
+            searchTerm: '',
             searchingTargets: [],
+            sortList: [],
+            sortTargets,
         }
     }
 
