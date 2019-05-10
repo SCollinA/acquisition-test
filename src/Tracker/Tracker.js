@@ -77,17 +77,25 @@ export default class extends React.Component {
         
         const addSortObject = field => {
             // loop through sort list
+            console.log('what is field', field)
             // looking at each object
             for (let i = 0; i < this.state.sortList.length; i++) {
                 const sortObject = this.state.sortList[i]
                 // if object is for this property and true
+                console.log('what is sort object', sortObject)
                 if (sortObject[field] === true) {
                     // toggle value to desc
                     sortObject[field] = false
                     // this.state.sortList.splice(i, 1, sortObject)
                     this.setState({
                         sortList: this.state.sortList
-                    }, () => sortTargets())
+                    }, () => {
+                        sortTargets()
+                        console.log(
+                            'toggled current sort object',
+                            this.state.sortList
+                        )
+                    })
                     return
                 // else if object is for this property and false
                 } else if (sortObject[field] === false) {
@@ -95,7 +103,13 @@ export default class extends React.Component {
                     this.state.sortList.splice(i, 1)
                     this.setState({
                         sortList: this.state.sortList
-                    }, () => sortTargets())
+                    }, () => {
+                        sortTargets()
+                        console.log(
+                            'removed current sort object', 
+                            this.state.sortList
+                        )
+                    })
                     return
                 }
             }
@@ -107,7 +121,10 @@ export default class extends React.Component {
                     ...this.state.sortList,
                     newSortObject
                 ]
-            }, () => sortTargets())
+            }, () => {
+                sortTargets()
+                console.log('added new sort object', this.state.sortList)
+            })
         }
 
         const sortTargets = () => {
