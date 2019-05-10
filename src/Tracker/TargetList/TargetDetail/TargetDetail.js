@@ -4,6 +4,7 @@ import TrackerContext from '../../../Context/TrackerContext'
 import TargetEditButton from './TargetEditButton';
 import Contact from '../Contact/Contact';
 import KeyMetricsDetail from './KeyMetricsDetail';
+import CompanyInfoDetail from './CompanyInfoDetail';
 
 export default ({ target }) => {
     return (
@@ -14,7 +15,7 @@ export default ({ target }) => {
                     onClick={() => selectTarget({})}
                 >
                     <TargetEditButton/>
-                    <h1>{target.name}</h1>
+                    <CompanyInfoDetail target={target}/>
                     {target.contacts.map((contact, index) => (
                         <Contact key={index} contact={contact}/>
                     ))}

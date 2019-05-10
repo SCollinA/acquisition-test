@@ -4,6 +4,7 @@ import TrackerContext from '../../../Context/TrackerContext'
 import ContactEdit from './ContactEdit';
 import StatusEdit from './StatusEdit';
 import KeyMetricsEdit from './KeyMetricsEdit';
+import CompanyInfoEdit from './CompanyInfoEdit';
 
 export default () => {
     return (
@@ -28,17 +29,7 @@ export default () => {
                         }}
                         onReset={() => editTarget(targets.find(target => target.id === editingTarget.id))}
                     >
-                        <input 
-                            type='text' 
-                            name='name'
-                            value={editingTarget.name}
-                            onChange={({ target }) => {
-                                editTarget({
-                                    ...editingTarget,
-                                    name: target.value,
-                                })
-                            }}
-                        />
+                        <CompanyInfoEdit/>
                         <ContactEdit/>
                         <KeyMetricsEdit/>
                         <StatusEdit/>
