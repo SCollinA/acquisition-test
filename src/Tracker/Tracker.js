@@ -78,7 +78,7 @@ export default class extends React.Component {
         const addSortObject = field => {
             // loop through sort list
             // looking at each object
-            for (let i = 0; i < this.state.sortList; i++) {
+            for (let i = 0; i < this.state.sortList.length; i++) {
                 const sortObject = this.state.sortList[i]
                 // if object is for this property and true
                 if (sortObject[field] === true) {
@@ -88,7 +88,6 @@ export default class extends React.Component {
                     this.setState({
                         sortList: this.state.sortList
                     }, () => sortTargets())
-                    console.log(this.state.sortList)
                     return
                 // else if object is for this property and false
                 } else if (sortObject[field] === false) {
@@ -97,7 +96,6 @@ export default class extends React.Component {
                     this.setState({
                         sortList: this.state.sortList
                     }, () => sortTargets())
-                    console.log(this.state.sortList)
                     return
                 }
             }
@@ -110,7 +108,6 @@ export default class extends React.Component {
                     newSortObject
                 ]
             }, () => sortTargets())
-            console.log(this.state.sortList)
         }
 
         const sortTargets = () => {
