@@ -53,7 +53,7 @@ export default [
             valuation: 1000000000,
             stockPrice: 45,
         },
-        status: statusTypes[0],
+        status: statusTypes[1],
         history: [
             `added ${new Date().toLocaleString()}`
         ]
@@ -85,7 +85,39 @@ export default [
             valuation: 1000000000,
             stockPrice: 45,
         },
-        status: statusTypes[0],
+        status: statusTypes[2],
+        history: [
+            `added ${new Date().toLocaleString()}`
+        ]
+    },
+    {
+        id: uuid(),
+        info: {
+            name: 'target 4',
+            address: '127 Main St., Los Angeles, California, 11111',
+            employeesCount: 3,
+            foundedDate: '12-1-2018',
+            isPublic: true,
+        },        
+        contacts: [
+            { 
+                id: uuid(),
+                name: 'new contact',
+                phoneNumber: '',
+            },
+            { 
+                id: uuid(),
+                name: 'new contact',
+                phoneNumber: '',
+            },
+        ],
+        keyMetrics: {
+            revenue: 100000000,
+            cashFlow: -1000,
+            valuation: 1000000000,
+            stockPrice: 45,
+        },
+        status: statusTypes[3],
         history: [
             `added ${new Date().toLocaleString()}`
         ]

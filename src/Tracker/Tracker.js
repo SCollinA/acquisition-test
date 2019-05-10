@@ -8,9 +8,9 @@ import TargetList from './TargetList/TargetList'
 import mockTargets from '../mockTargets'
 
 export const statusTypes = [
-    'researching',
-    'pending approval',
     'approved',
+    'pending approval',
+    'researching',
     'denied',
 ]
 
@@ -169,6 +169,18 @@ export default class extends React.Component {
                                             b.info.employeesCount
                                         )
                                         if (a.info.employeesCount > b.info.employeesCount) {
+                                            order = 1
+                                        } else {
+                                            order = -1
+                                        }
+                                        break
+                                    case 'status':
+                                        console.log(
+                                            'sorting by status',
+                                            a.status, 
+                                            b.status
+                                        )
+                                        if (statusTypes.indexOf(a.status) > statusTypes.indexOf(b.status)) {
                                             order = 1
                                         } else {
                                             order = -1
