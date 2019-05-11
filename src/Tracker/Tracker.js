@@ -214,6 +214,18 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
+                                    case 'cashFlow':
+                                        console.log(
+                                            'sorting by cashFlow',
+                                            a.keyMetrics.cashFlow,
+                                            b.keyMetrics.cashFlow
+                                        )
+                                        if (a.keyMetrics.cashFlow <= b.keyMetrics.cashFlow) {
+                                            order++
+                                        } else {
+                                            order--
+                                        }
+                                        break
                                     case 'status':
                                         console.log(
                                             'sorting by status',

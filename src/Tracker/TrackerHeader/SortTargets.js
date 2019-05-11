@@ -114,6 +114,23 @@ export default () => {
                         </button>
                         <button
                             className={
+                                `sortCashFlow` +
+                                `${sortClassesObject.cashFlow !== undefined ?
+                                    sortClassesObject.cashFlow[0] === true ?
+                                    ' activeSort sortDown' :
+                                    ' activeSort sortUp' :
+                                    ''}`
+                            }
+                            onClick={() => {
+                                addSortObject('cashFlow')
+                            }}
+                        >
+                            Cash Flow
+                            {sortClassesObject.cashFlow &&
+                                sortClassesObject.cashFlow[1]}
+                        </button>
+                        <button
+                            className={
                                 `sortStatus` +
                                 `${sortClassesObject.status !== undefined ?
                                     sortClassesObject.status[0] === true ?
