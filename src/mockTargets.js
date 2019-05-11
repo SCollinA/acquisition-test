@@ -13,7 +13,7 @@ export default [
         info: {
             name: 'target 1',
             address: '123 Main St., Los Angeles, California, 11111',
-            employeesCount: 1,
+            employeesCount: 3,
             foundedDate: '1-1-1970',
             isPublic: true,
         },
@@ -38,7 +38,7 @@ export default [
         info: {
             name: 'target 2',
             address: '125 Main St., Los Angeles, California, 11111',
-            employeesCount: 2,
+            employeesCount: 3,
             foundedDate: '12-25-2018',
             isPublic: false,
         },        
@@ -48,7 +48,7 @@ export default [
             phoneNumber: '',
         }],
         keyMetrics: {
-            revenue: 100000000,
+            revenue: 9999999,
             cashFlow: -1000,
             valuation: 1000000000,
             stockPrice: 45,
@@ -80,7 +80,7 @@ export default [
             },
         ],
         keyMetrics: {
-            revenue: 100000000,
+            revenue: 2,
             cashFlow: -1000,
             valuation: 1000000000,
             stockPrice: 45,
@@ -112,7 +112,7 @@ export default [
             },
         ],
         keyMetrics: {
-            revenue: 100000000,
+            revenue: 300,
             cashFlow: -1000,
             valuation: 1000000000,
             stockPrice: 45,

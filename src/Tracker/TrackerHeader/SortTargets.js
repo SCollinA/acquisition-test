@@ -75,6 +75,8 @@ export default () => {
                             }}
                         >
                             Founded Date
+                            {sortClassesObject.foundedDate &&
+                                sortClassesObject.foundedDate[1]}
                         </button>
                         <button
                             className={
@@ -90,6 +92,25 @@ export default () => {
                             }}
                         >
                             Public
+                            {sortClassesObject.isPublic &&
+                                sortClassesObject.isPublic[1]}
+                        </button>
+                        <button
+                            className={
+                                `sortRevenue` +
+                                `${sortClassesObject.revenue !== undefined ?
+                                    sortClassesObject.revenue[0] === true ?
+                                    ' activeSort sortDown' :
+                                    ' activeSort sortUp' :
+                                    ''}`
+                            }
+                            onClick={() => {
+                                addSortObject('revenue')
+                            }}
+                        >
+                            Revenue
+                            {sortClassesObject.revenue &&
+                                sortClassesObject.revenue[1]}
                         </button>
                         <button
                             className={

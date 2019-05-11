@@ -122,8 +122,8 @@ export default class extends React.Component {
                     newSortObject
                 ]
             }, () => {
-                sortTargets()
                 console.log('added new sort object', this.state.sortList)
+                sortTargets()
             })
         }
 
@@ -148,6 +148,8 @@ export default class extends React.Component {
                                     'and order',
                                     order
                                 )
+                                // sign must be hoisted out of for loop
+                                // if sortObject[field] === false, order is desc
                                 var sign = sortObject[field] ?
                                     1 : -1
                                 // then use switch to sort correct field
@@ -170,7 +172,7 @@ export default class extends React.Component {
                                             a.info.employeesCount, 
                                             b.info.employeesCount
                                         )
-                                        if (a.info.employeesCount > b.info.employeesCount) {
+                                        if (a.info.employeesCount <= b.info.employeesCount) {
                                             order++
                                         } else {
                                             order--
@@ -200,13 +202,13 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
-                                    case 'isPublic':
+                                    case 'revenue':
                                         console.log(
-                                            'sorting by isPublic',
-                                            a.info.isPublic,
-                                            b.info.isPublic
+                                            'sorting by revenue',
+                                            a.keyMetrics.revenue,
+                                            b.keyMetrics.revenue
                                         )
-                                        if (b.info.isPublic || !a.info.isPublic) {
+                                        if (a.keyMetrics.revenue <= b.keyMetrics.revenue) {
                                             order++
                                         } else {
                                             order--
