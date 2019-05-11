@@ -9,20 +9,24 @@ import TargetDetail from './TargetDetail/TargetDetail'
 export default () => {
     return (
         <TrackerContext.Consumer>
-            {({ targets, selectedTarget, editingTarget }) => (
+            {({ targets, selectedTarget, editingTarget, allDetailsView }) => (
                 <div className='TargetList'>
                     <TargetListHeader/>
                     {targets.map(target => {
-                        const targetComponent = (selectedTarget.id === target.id && (
+                        const targetComponent = (
+                            selectedTarget.id === target.id ||
+                            allDetailsView
+                            ) ? (
                             <TargetDetail 
                                 key={target.id}
-                                target={
+                                target={allDetailsView ?
+                                    target :
                                     editingTarget.id === selectedTarget.id ?
                                     editingTarget :
                                     selectedTarget
                                 }
                             />
-                        )) || (
+                        ) : (
                             <Target 
                                 key={target.id} 
                                 target={target}

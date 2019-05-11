@@ -1,5 +1,5 @@
 import React from 'react'
-import TrackerContext from '../../../Context/TrackerContext'
+import TrackerContext from '../../Context/TrackerContext'
 
 export default () => {
     return (

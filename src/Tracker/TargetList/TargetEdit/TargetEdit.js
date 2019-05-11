@@ -40,7 +40,11 @@ export default () => {
                                 onClick={() => editTarget({})}
                                 />
                             <input type='button' value='delete'
-                                onClick={() => deleteTarget()}
+                                onClick={() => {
+                                    if (window.confirm('Are you sure?')) {
+                                        deleteTarget()
+                                    }
+                                }}
                             />
                         </div>
                     </form>
