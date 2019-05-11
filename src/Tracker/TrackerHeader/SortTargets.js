@@ -78,6 +78,21 @@ export default () => {
                         </button>
                         <button
                             className={
+                                `sortIsPublic` +
+                                `${sortClassesObject.isPublic !== undefined ?
+                                    sortClassesObject.isPublic[0] === true ?
+                                    ' activeSort sortDown' :
+                                    ' activeSort sortUp' :
+                                    ''}`
+                            }
+                            onClick={() => {
+                                addSortObject('isPublic')
+                            }}
+                        >
+                            Public
+                        </button>
+                        <button
+                            className={
                                 `sortStatus` +
                                 `${sortClassesObject.status !== undefined ?
                                     sortClassesObject.status[0] === true ?

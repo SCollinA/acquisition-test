@@ -32,7 +32,6 @@ export default () => {
                                 target={target}
                             />
                         )
-                        console.log(targetComponent)
                         return targetComponent
                     })}
                     {editingTarget.id &&

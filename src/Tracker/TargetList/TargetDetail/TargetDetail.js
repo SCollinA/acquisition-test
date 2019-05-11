@@ -9,12 +9,12 @@ import CompanyInfoDetail from './CompanyInfoDetail';
 export default ({ target }) => {
     return (
         <TrackerContext.Consumer>
-            {({ selectTarget, showAllDetails }) => (
+            {({ selectTarget, allDetailsView }) => (
                 <div 
                     className='TargetDetail'
                     onClick={() => selectTarget({})}
                 >
-                    {!showAllDetails && 
+                    {!allDetailsView && 
                         <TargetEditButton/>}
                     <CompanyInfoDetail target={target}/>
                     {target.contacts.map((contact, index) => (

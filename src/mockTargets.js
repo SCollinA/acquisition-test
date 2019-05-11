@@ -40,7 +40,7 @@ export default [
             address: '125 Main St., Los Angeles, California, 11111',
             employeesCount: 2,
             foundedDate: '12-25-2018',
-            isPublic: true,
+            isPublic: false,
         },        
         contacts: [{ 
             id: uuid(),
@@ -97,7 +97,7 @@ export default [
             address: '127 Main St., Los Angeles, California, 11111',
             employeesCount: 3,
             foundedDate: '12-1-2018',
-            isPublic: true,
+            isPublic: false,
         },        
         contacts: [
             { 

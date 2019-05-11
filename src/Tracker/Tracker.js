@@ -159,7 +159,8 @@ export default class extends React.Component {
                                             b.info.name
                                         )
                                         if (a.info.name > b.info.name) {
-                                            order++                                        } else {
+                                            order++                                        
+                                        } else {
                                             order--
                                         }
                                         break
@@ -182,6 +183,30 @@ export default class extends React.Component {
                                             b.info.foundedDate
                                         )
                                         if (new Date(a.info.foundedDate) < new Date(b.info.foundedDate)) {
+                                            order++
+                                        } else {
+                                            order--
+                                        }
+                                        break
+                                    case 'isPublic':
+                                        console.log(
+                                            'sorting by isPublic',
+                                            a.info.isPublic,
+                                            b.info.isPublic
+                                        )
+                                        if (b.info.isPublic || !a.info.isPublic) {
+                                            order++
+                                        } else {
+                                            order--
+                                        }
+                                        break
+                                    case 'isPublic':
+                                        console.log(
+                                            'sorting by isPublic',
+                                            a.info.isPublic,
+                                            b.info.isPublic
+                                        )
+                                        if (b.info.isPublic || !a.info.isPublic) {
                                             order++
                                         } else {
                                             order--
