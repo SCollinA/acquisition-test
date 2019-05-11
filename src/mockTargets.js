@@ -25,7 +25,7 @@ export default [
         keyMetrics: {
             revenue: 100000000,
             cashFlow: 10,
-            valuation: 1000000000,
+            valuation: 100000,
             stockPrice: 45,
         },
         status: statusTypes[0],
@@ -82,7 +82,7 @@ export default [
         keyMetrics: {
             revenue: 2,
             cashFlow: 1000,
-            valuation: 1000000000,
+            valuation: 2000000000,
             stockPrice: 45,
         },
         status: statusTypes[2],
@@ -114,7 +114,7 @@ export default [
         keyMetrics: {
             revenue: 300,
             cashFlow: -100,
-            valuation: 1000000000,
+            valuation: 1000,
             stockPrice: 45,
         },
         status: statusTypes[3],

@@ -131,6 +131,23 @@ export default () => {
                         </button>
                         <button
                             className={
+                                `sortValuation` +
+                                `${sortClassesObject.valuation !== undefined ?
+                                    sortClassesObject.valuation[0] === true ?
+                                    ' activeSort sortDown' :
+                                    ' activeSort sortUp' :
+                                    ''}`
+                            }
+                            onClick={() => {
+                                addSortObject('valuation')
+                            }}
+                        >
+                            Valuation
+                            {sortClassesObject.valuation &&
+                                sortClassesObject.valuation[1]}
+                        </button>
+                        <button
+                            className={
                                 `sortStatus` +
                                 `${sortClassesObject.status !== undefined ?
                                     sortClassesObject.status[0] === true ?

@@ -226,6 +226,18 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
+                                    case 'valuation':
+                                        console.log(
+                                            'sorting by valuation',
+                                            a.keyMetrics.valuation,
+                                            b.keyMetrics.valuation
+                                        )
+                                        if (a.keyMetrics.valuation <= b.keyMetrics.valuation) {
+                                            order++
+                                        } else {
+                                            order--
+                                        }
+                                        break
                                     case 'status':
                                         console.log(
                                             'sorting by status',
