@@ -9,6 +9,7 @@ export default () => {
         <header className='TrackerHeader'>
             <div className='searchAddDiv'>
                 <SearchTargets/>
+                
                 <AddTarget/>
             </div>
             <SortTargets/>
