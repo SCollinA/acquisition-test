@@ -209,6 +209,10 @@ export default class extends React.Component {
             })
         }
 
+        const showAllDetails = () => this.setState({
+            allDetailsView: !this.state.allDetailsView
+        })
+
         this.state = {
             targets: mockTargets,
             addTarget,
@@ -224,6 +228,8 @@ export default class extends React.Component {
             sortList: [],
             addSortObject,
             sortTargets,
+            allDetailsView: false,
+            showAllDetails,
         }
     }
 
