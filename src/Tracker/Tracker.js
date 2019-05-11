@@ -190,18 +190,18 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
-                                    case 'isPublic':
-                                        console.log(
-                                            'sorting by isPublic',
-                                            a.info.isPublic,
-                                            b.info.isPublic
-                                        )
-                                        if (b.info.isPublic || !a.info.isPublic) {
-                                            order++
-                                        } else {
-                                            order--
-                                        }
-                                        break
+                                    // case 'isPublic':
+                                    //     console.log(
+                                    //         'sorting by isPublic',
+                                    //         a.info.isPublic,
+                                    //         b.info.isPublic
+                                    //     )
+                                    //     if (b.info.isPublic || !a.info.isPublic) {
+                                    //         order++
+                                    //     } else {
+                                    //         order--
+                                    //     }
+                                    //     break
                                     case 'revenue':
                                         console.log(
                                             'sorting by revenue',
@@ -290,6 +290,10 @@ export default class extends React.Component {
             })
         }
 
+        const removeSort = () => this.setState({
+            sortList: []
+        }, () => this.state.sortTargets())
+
         const showAllDetails = () => this.setState({
             allDetailsView: !this.state.allDetailsView
         })
@@ -309,6 +313,7 @@ export default class extends React.Component {
             sortList: [],
             addSortObject,
             sortTargets,
+            removeSort,
             allDetailsView: false,
             showAllDetails,
         }

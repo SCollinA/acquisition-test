@@ -78,7 +78,7 @@ export default () => {
                             {sortClassesObject.foundedDate &&
                                 sortClassesObject.foundedDate[1]}
                         </button>
-                        <button
+                        {/* <button
                             className={
                                 `sortIsPublic` +
                                 `${sortClassesObject.isPublic !== undefined ?
@@ -94,7 +94,7 @@ export default () => {
                             Public
                             {sortClassesObject.isPublic &&
                                 sortClassesObject.isPublic[1]}
-                        </button>
+                        </button> */}
                         <button
                             className={
                                 `sortRevenue` +
