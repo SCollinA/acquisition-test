@@ -63,6 +63,21 @@ export default () => {
                         </button>
                         <button
                             className={
+                                `sortFoundedDate` +
+                                `${sortClassesObject.foundedDate !== undefined ?
+                                    sortClassesObject.foundedDate[0] === true ?
+                                    ' activeSort sortDown' :
+                                    ' activeSort sortUp' :
+                                    ''}`
+                            }
+                            onClick={() => {
+                                addSortObject('foundedDate')
+                            }}
+                        >
+                            Founded Date
+                        </button>
+                        <button
+                            className={
                                 `sortStatus` +
                                 `${sortClassesObject.status !== undefined ?
                                     sortClassesObject.status[0] === true ?

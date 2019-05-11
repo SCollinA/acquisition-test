@@ -175,6 +175,18 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
+                                    case 'foundedDate':
+                                        console.log(
+                                            'sorting by foundedDate',
+                                            a.info.foundedDate,
+                                            b.info.foundedDate
+                                        )
+                                        if (new Date(a.info.foundedDate) < new Date(b.info.foundedDate)) {
+                                            order++
+                                        } else {
+                                            order--
+                                        }
+                                        break
                                     case 'status':
                                         console.log(
                                             'sorting by status',
