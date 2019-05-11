@@ -12,7 +12,7 @@ export default [
         id: uuid(),
         info: {
             name: 'target 1',
-            address: '123 Main St., Los Angeles, California, 11111',
+            address: '123 Main St., New York City, NY, 11111',
             employeesCount: 3,
             foundedDate: '1-1-1970',
             isPublic: true,

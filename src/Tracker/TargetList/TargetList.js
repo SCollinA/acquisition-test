@@ -9,10 +9,14 @@ import TargetDetail from './TargetDetail/TargetDetail'
 export default () => {
     return (
         <TrackerContext.Consumer>
-            {({ targets, selectedTarget, editingTarget, allDetailsView }) => (
+            {({ targets, searchTerm, searchingTargets, selectedTarget, editingTarget, allDetailsView }) => {
+                const displayTargets = searchTerm.length ?
+                    searchingTargets :
+                    targets
+            return (
                 <div className='TargetList'>
                     <TargetListHeader/>
-                    {targets.map(target => {
+                    {displayTargets.map(target => {
                         const targetComponent = (
                             selectedTarget.id === target.id ||
                             allDetailsView
@@ -37,7 +41,7 @@ export default () => {
                     {editingTarget.id &&
                         <TargetEdit/>}
                 </div>
-            )}
+            )}}
         </TrackerContext.Consumer>
     )
 }
