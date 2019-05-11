@@ -238,6 +238,24 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
+                                    case 'stockPrice':
+                                        console.log(
+                                            'sorting by stockPrice',
+                                            a.keyMetrics.stockPrice,
+                                            b.keyMetrics.stockPrice,
+                                            a.info.isPublic,
+                                            b.info.isPublic,
+                                        )
+                                        if (a.info.isPublic && !b.info.isPublic) {
+                                            order--
+                                        } else if (!a.info.isPublic && b.info.isPublic) {
+                                            order++
+                                        } else if (a.keyMetrics.stockPrice >= b.keyMetrics.stockPrice) {
+                                            order--
+                                        } else {
+                                            order++
+                                        }
+                                        break
                                     case 'status':
                                         console.log(
                                             'sorting by status',

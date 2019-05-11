@@ -26,7 +26,7 @@ export default [
             revenue: 100000000,
             cashFlow: 10,
             valuation: 100000,
-            stockPrice: 45,
+            stockPrice: 25,
         },
         status: statusTypes[0],
         history: [

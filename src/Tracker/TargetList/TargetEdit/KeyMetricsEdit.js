@@ -53,21 +53,25 @@ export default () => {
                             })
                         }}
                     />            
-                    <label htmlFor='stockPrice'>Stock Price</label>   
-                    <input 
-                        type='number'
-                        name='stockPrice'
-                        value={editingTarget.keyMetrics.stockPrice}
-                        onChange={({ target }) => {
-                            editTarget({
-                                ...editingTarget,
-                                keyMetrics: {
-                                    ...editingTarget.keyMetrics,
-                                    stockPrice: target.value
-                                }
-                            })
-                        }}
-                    />               
+                    {editingTarget.info.isPublic && (
+                    <>
+                        <label htmlFor='stockPrice'>Stock Price</label>   
+                        <input 
+                            type='number'
+                            name='stockPrice'
+                            value={editingTarget.keyMetrics.stockPrice}
+                            onChange={({ target }) => {
+                                editTarget({
+                                    ...editingTarget,
+                                    keyMetrics: {
+                                        ...editingTarget.keyMetrics,
+                                        stockPrice: target.value
+                                    }
+                                })
+                            }}
+                        />
+                    </>
+                    )}               
                 </fieldset>
             )} 
         </TrackerContext.Consumer>
