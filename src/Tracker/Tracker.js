@@ -75,6 +75,28 @@ export default class extends React.Component {
             selectedTarget: {}
         })
         
+        const updateSearchTerm = searchTerm => {
+            const lowerCaseTerm = searchTerm.toLowerCase()
+            const searchingTargets = this.state.targets.filter(target => {
+                const contactFound = target.contacts.find(contact => {
+                    return contact.name.toLowerCase().includes(lowerCaseTerm)
+                })
+                return target.info.name.toLowerCase().includes(lowerCaseTerm) ||
+                target.info.address.toLowerCase().includes(lowerCaseTerm) ||
+                contactFound
+            })
+            console.log(
+                'search term and results',
+                searchTerm, 
+                searchingTargets,
+                this.state.targets,
+            )
+            this.setState({
+                searchTerm,
+                searchingTargets
+            })
+        }
+
         const addSortObject = field => {
             // loop through sort list
             console.log('what is field', field)
@@ -307,8 +329,9 @@ export default class extends React.Component {
             deleteTarget,
             selectedTarget: {},
             editingTarget: {},
-            comparingTargets: [],
+            // comparingTargets: [],
             searchTerm: '',
+            updateSearchTerm,
             searchingTargets: [],
             sortList: [],
             addSortObject,
