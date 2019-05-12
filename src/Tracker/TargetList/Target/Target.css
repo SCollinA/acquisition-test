@@ -1,0 +1,8 @@
+.Target {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: solid 5px black;
+    margin: 2%;
+    cursor: pointer;
+}
