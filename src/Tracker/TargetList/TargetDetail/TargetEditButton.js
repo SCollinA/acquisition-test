@@ -1,15 +1,15 @@
 import React from 'react'
 import TrackerContext from '../../../Context/TrackerContext'
 
-export default () => {
+export default ({ target }) => {
     return (
         <TrackerContext.Consumer>
-            {({ selectedTarget, editTarget }) => (
+            {({  editTarget }) => (
                 <button 
                     className='editButton'
                     onClick={event => {
                         event.stopPropagation()
-                        editTarget(selectedTarget)
+                        editTarget(target)
                     }}
                 >
                     Edit
