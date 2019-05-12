@@ -21,7 +21,8 @@
     flex-direction: column;
     justify-content: space-around; */
     background-color: white;
-    border: solid 5px black;
+    border: solid 2px grey;
+    border-radius: 10px;
 }
 
 .contactEditInputs {

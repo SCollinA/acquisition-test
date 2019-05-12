@@ -8,11 +8,12 @@
     margin: 2%;
     cursor: pointer;
     background-color: white;
+    border-radius: 10px;
 }
 
 .editButton {
     margin: auto 0;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
 }
