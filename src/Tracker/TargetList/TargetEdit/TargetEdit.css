@@ -25,14 +25,24 @@
     border-radius: 10px;
 }
 
-.CompanyInfoEdit, .KeyMetricsEdit {
+.CompanyInfoEdit,
+.KeyMetricsEdit,
+.StatusEdit {
     display: flex;
     flex-direction: column;
 }
 
-.CompanyInfoEdit > label, .KeyMetricsEdit > label {
+.CompanyInfoEdit > label,
+.KeyMetricsEdit > label {
     display: flex;
     flex-direction: column;
+}
+
+.StatusEdit > label {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    white-space: nowrap;
 }
 
 .contactEditInputs {

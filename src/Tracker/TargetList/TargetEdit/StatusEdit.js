@@ -6,7 +6,8 @@ export default () => {
     return (
         <TrackerContext.Consumer>
             {({ editTarget, editingTarget }) => (
-                <fieldset 
+                <fieldset
+                    className='StatusEdit'
                     onChange={({ target }) => {
                         editTarget({
                             ...editingTarget,
@@ -16,40 +17,40 @@ export default () => {
                 >
                     <legend>Target Status</legend>
                     <label>
-                        Researching
                         <input 
                             type='radio'
                             name='status'
                             value='researching'
                             defaultChecked={editingTarget.status === statusTypes[0]}
                         />
+                        Researching
                     </label>
                     <label>
-                        Pending approval
                         <input 
                             type='radio'
                             name='status'
                             value='pending approval'
                             defaultChecked={editingTarget.status === statusTypes[1]}
                         />
+                        Pending approval
                     </label>
                     <label>
-                        Approved
                         <input 
                             type='radio'
                             name='status'
                             value='approved'
                             defaultChecked={editingTarget.status === statusTypes[2]}
                         />
+                        Approved
                     </label>
                     <label>
-                        Denied
                         <input 
                             type='radio'
                             name='status'
                             value='denied'
                             defaultChecked={editingTarget.status === statusTypes[3]}
                         />
+                        Denied
                     </label>
                 </fieldset>
                                         
