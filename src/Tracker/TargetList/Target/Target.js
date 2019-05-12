@@ -4,6 +4,7 @@ import TrackerContext from '../../../Context/TrackerContext'
 import Contact from '../Contact/Contact';
 
 export default ({ target }) => {
+    // a harmless comment to test gitignore
     return (
         <TrackerContext.Consumer>
             {({ selectTarget }) => (
