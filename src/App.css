@@ -10,19 +10,3 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
-button {
-  padding: 1%;
-  border-radius: 2em;
-  margin: 1%;
-  font-size: 12px;
-  text-align: center;
-}
-
-button:focus {
-  outline: none;
-}
-
-button:active {
-  background-color: lightgrey;
-}

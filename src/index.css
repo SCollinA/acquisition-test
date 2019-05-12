@@ -5,4 +5,23 @@ html, body, #root {
   height: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  background-image: url(./images/Atlanta_skyline_traffic_night.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+button, input {
+  padding: 1%;
+  border-radius: 2em;
+  margin: 1%;
+  font-size: 12px;
+  /* text-align: center; */
+}
+
+button:focus, input:focus {
+  outline: none;
+}
+
+button:active, input[button]:active {
+  background-color: lightgrey;
 }

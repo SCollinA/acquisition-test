@@ -8,10 +8,31 @@
     flex-wrap: wrap;
 }
 
+/* .searchAddDiv > * {
+    flex-basis: 15%;
+} */
+
+.searchDiv {
+    flex-basis: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.searchDiv > * {
+    margin: auto 5%;
+    padding: 2% 5%;
+    font-size: 12px;
+    border-radius: 2em;
+}
+
 .SortTargets {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.SortTargets > * {
+    flex-basis: 20%;
 }
 
 /* .activeSort {
