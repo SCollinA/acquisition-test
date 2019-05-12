@@ -15,7 +15,8 @@ export default () => {
                     targets
             return (
                 <div className='TargetList'>
-                    <TargetListHeader/>
+                    {!allDetailsView &&
+                        <TargetListHeader/>}
                     {displayTargets.map(target => {
                         const targetComponent = (
                             selectedTarget.id === target.id ||

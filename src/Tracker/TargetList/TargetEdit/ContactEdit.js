@@ -13,7 +13,8 @@ export default () => {
                             <input
                                 type='text' 
                                 name='contactName'
-                                defaultValue={contact.name}
+                                placeholder='Contact Name'
+                                value={contact.name}
                                 onChange={({ target }) => {
                                     contact.name = target.value
                                     editTarget({
@@ -25,6 +26,7 @@ export default () => {
                             <input 
                                 type='text' 
                                 name='contactPhone'
+                                placeholder='Phone Number'
                                 value={contact.phoneNumber}
                                 onChange={({ target }) => {
                                     contact.phoneNumber = target.value
@@ -39,14 +41,16 @@ export default () => {
                                 className='removeContact'
                                 onClick={event => {
                                     event.stopPropagation()
-                                    editTarget({
-                                        ...editingTarget,
-                                        contacts: [
-                                            ...editingTarget.contacts.filter(currentContact => {
-                                                return currentContact.id !== contact.id
-                                            })
-                                        ]
-                                    })
+                                    if (window.confirm('Are you sure?')) {
+                                        editTarget({
+                                            ...editingTarget,
+                                            contacts: [
+                                                ...editingTarget.contacts.filter(currentContact => {
+                                                    return currentContact.id !== contact.id
+                                                })
+                                            ]
+                                        })
+                                    }
                                 }}
                                 value='Remove Contact'
                             />
@@ -64,7 +68,7 @@ export default () => {
                                     ...editingTarget.contacts,
                                     { 
                                         id: uuid(),
-                                        name: 'new contact',
+                                        name: '',
                                         phoneNumber: '',
                                     }
                                 ]

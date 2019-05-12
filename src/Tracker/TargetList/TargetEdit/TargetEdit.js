@@ -30,8 +30,8 @@ export default () => {
                         onReset={() => editTarget(targets.find(target => target.id === editingTarget.id))}
                     >
                         <CompanyInfoEdit/>
-                        <ContactEdit/>
                         <KeyMetricsEdit/>
+                        <ContactEdit/>
                         <StatusEdit/>
                         <div>
                             <input type='submit' value='save'/>
