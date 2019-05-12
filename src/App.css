@@ -12,10 +12,11 @@
 }
 
 button {
-  padding: 2%;
+  padding: 1%;
   border-radius: 2em;
   margin: 1%;
   font-size: 12px;
+  text-align: center;
 }
 
 button:focus {
