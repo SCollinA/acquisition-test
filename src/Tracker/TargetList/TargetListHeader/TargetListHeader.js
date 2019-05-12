@@ -4,11 +4,11 @@ import './TargetListHeader.css'
 export default () => {
     return (
         <header className='TargetListHeader'>
-            <h1>Name</h1>
-            <h1> | </h1>
-            <h1>Primary Contact</h1>
-            <h1> | </h1>
-            <h1>Status</h1>
+            <h4>Name</h4>
+            <h4> | </h4>
+            <h4>Primary Contact</h4>
+            <h4> | </h4>
+            <h4>Status</h4>
         </header>
     )
 }

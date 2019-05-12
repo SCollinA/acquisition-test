@@ -8,6 +8,7 @@ html, body, #root {
   background-image: url(./images/Atlanta_skyline_traffic_night.jpg);
   background-size: cover;
   background-position: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 button, input {

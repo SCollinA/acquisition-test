@@ -89,7 +89,6 @@ export default class extends React.Component {
                 'search term and results',
                 searchTerm, 
                 searchingTargets,
-                this.state.targets,
             )
             this.setState({
                 searchTerm,

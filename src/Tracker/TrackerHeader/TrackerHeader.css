@@ -15,6 +15,7 @@
 .searchDiv {
     flex-basis: 40%;
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -23,6 +24,7 @@
     padding: 2% 5%;
     font-size: 12px;
     border-radius: 2em;
+    min-width: fit-content;
 }
 
 .SortTargets {
@@ -45,4 +47,10 @@
 
 .sortUp {
     background-color: pink;
+}
+
+@media (max-width: 500px) {
+    .searchDiv {
+        flex-basis: 100%;
+    }
 }
