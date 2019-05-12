@@ -3,9 +3,14 @@
     justify-content: space-around;
     flex-wrap: wrap;
     border: solid 5px grey;
-    margin: 0 2% 2%;
+    margin: 0 1% 1%;
     position: sticky;
     top: 0;
     background-color: white;
     z-index: 1;
+    border-radius: 10px;
+}
+
+.TargetListHeader > h4 {
+    margin: 1%;
 }

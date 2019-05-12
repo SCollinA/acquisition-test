@@ -4,9 +4,10 @@
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
-    border: solid 5px black;
+    border: solid 2px grey;
     margin: 2%;
     cursor: pointer;
+    background-color: white;
 }
 
 .editButton {
