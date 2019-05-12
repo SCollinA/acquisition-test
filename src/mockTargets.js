@@ -1,10 +1,10 @@
 import uuid from 'uuid'
 
 export const statusTypes = [
-    'researching',
-    'pending approval',
-    'approved',
-    'denied',
+    'Researching',
+    'Pending approval',
+    'Approved',
+    'Denied',
 ]
 
 export default [

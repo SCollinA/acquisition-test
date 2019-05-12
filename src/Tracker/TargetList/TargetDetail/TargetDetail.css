@@ -9,6 +9,7 @@
     cursor: pointer;
     background-color: white;
     border-radius: 10px;
+    text-align: center;
 }
 
 .editButton {
@@ -16,4 +17,14 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.infoMetrics {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contactsDetail {
+    display: flex;
+    justify-content: space-around;
 }

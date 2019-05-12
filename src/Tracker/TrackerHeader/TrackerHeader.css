@@ -35,6 +35,7 @@
 
 .SortTargets > * {
     flex-basis: 20%;
+    background-color: lightyellow;
 }
 
 /* .activeSort {
