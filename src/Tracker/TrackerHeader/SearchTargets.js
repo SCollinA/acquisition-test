@@ -17,7 +17,7 @@ export default () => {
                         className='clearSearch'
                         onClick={() => updateSearchTerm('')}
                     >
-                        Clear Search
+                        Clear
                     </button>
                 </div>
             )}

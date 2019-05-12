@@ -11,3 +11,17 @@
   flex-wrap: wrap;
 }
 
+button {
+  padding: 2%;
+  border-radius: 2em;
+  margin: 1%;
+  font-size: 12px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background-color: lightgrey;
+}
