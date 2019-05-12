@@ -9,7 +9,7 @@ export default () => {
                     <input 
                         type='text' 
                         name='searchTargets' 
-                        placeholder='search term'
+                        placeholder='Search targets'
                         value={searchTerm}
                         onChange={({ target: { value } }) => updateSearchTerm(value)}
                     />
