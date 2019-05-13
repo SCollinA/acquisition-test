@@ -3,11 +3,14 @@ import React from 'react'
 export default ({ target }) => {
     return (
         <div className='CompanyInfoDetail'>
-            <h1>{target.info.name}</h1>
-            <h1>{target.info.address}</h1>
-            <h1>{target.info.employeesCount}</h1>
-            <h1>{target.info.foundedDate}</h1>
-            <h1>{target.info.isPublic && 'Publicly Traded'}</h1>
+            <h4>{target.info.name}</h4>
+            <h4>{target.info.address}</h4>
+            <h4>
+                {`${target.info.employeesCount} `}
+                Employee{target.info.employeesCount > 1 && 's'}
+            </h4>
+            <h4>Founded {target.info.foundedDate}</h4>
+            <h4>{target.info.isPublic && 'Publicly Traded'}</h4>
         </div>
     )
 }

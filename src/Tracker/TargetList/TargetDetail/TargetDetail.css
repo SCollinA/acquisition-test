@@ -4,14 +4,35 @@
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
-    border: solid 5px black;
+    border: solid 2px grey;
     margin: 2%;
     cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .editButton {
     margin: auto 0;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
+    border-radius: 5px;
+}
+
+.infoMetrics {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 500px) {
+    .infoMetrics {
+        flex-direction: column;
+    }
+}
+
+.contactsDetail {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

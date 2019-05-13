@@ -1,8 +1,11 @@
 .Target {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    border: solid 5px black;
+    border: solid 2px grey;
+    border-radius: 10px;
     margin: 2%;
+    padding: 0 5%;
     cursor: pointer;
+    background-color: white;
 }

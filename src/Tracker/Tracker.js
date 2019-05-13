@@ -8,10 +8,10 @@ import TargetList from './TargetList/TargetList'
 import mockTargets from '../mockTargets'
 
 export const statusTypes = [
-    'approved',
-    'pending approval',
-    'researching',
-    'denied',
+    'Approved',
+    'Pending approval',
+    'Researching',
+    'Denied',
 ]
 
 export default class extends React.Component {
@@ -38,9 +38,9 @@ export default class extends React.Component {
                     revenue: 100000000,
                 },
                 status: statusTypes[0],
-                history: [
-                    `added ${new Date().toLocaleString()}`
-                ]
+                // history: [
+                //     `added ${new Date().toLocaleString()}`
+                // ]
             }
             this.setState({
                 targets: [
@@ -89,7 +89,6 @@ export default class extends React.Component {
                 'search term and results',
                 searchTerm, 
                 searchingTargets,
-                this.state.targets,
             )
             this.setState({
                 searchTerm,

@@ -15,16 +15,62 @@
     z-index: 1;
     position: absolute;
     margin: auto;
+    padding: 2%;
     top: 10%;
     left: 10%;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around; */
     background-color: white;
-    border: solid 5px black;
+    border: solid 2px grey;
+    border-radius: 10px;
+}
+
+.CompanyInfoEdit,
+.KeyMetricsEdit,
+.StatusEdit {
+    display: flex;
+    flex-direction: column;
+}
+
+.CompanyInfoEdit > label,
+.KeyMetricsEdit > label {
+    display: flex;
+    flex-direction: column;
+}
+
+.StatusEdit > label {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    white-space: nowrap;
 }
 
 .contactEditInputs {
     margin: 2%;
-    border: solid 1px black;
+    border: solid 1px lightgrey;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contactEditInputs > * {
+    flex-basis: 20%;
+}
+
+@media (max-width: 500px) {
+    .contactEditInputs {
+        flex-direction: column;
+    }
+    .contactEditInputs > * {
+        margin: auto;
+    }
+}
+
+.addContact {
+    display: block;
+    margin: auto;
+}
+
+.targetEditButtons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

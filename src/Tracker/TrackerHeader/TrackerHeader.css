@@ -1,7 +1,26 @@
+.TrackerHeader {
+    margin-bottom: 2%;
+}
+
 .searchAddDiv {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.searchDiv {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.searchDiv > * {
+    margin: auto 5%;
+    padding: 2% 5%;
+    font-size: 12px;
+    border-radius: 2em;
+    min-width: fit-content;
 }
 
 .SortTargets {
@@ -10,14 +29,21 @@
     flex-wrap: wrap;
 }
 
-.activeSort {
-    border: solid 2px blue;
+.SortTargets > * {
+    flex-basis: 20%;
+    background-color: lightyellow;
 }
 
 .sortDown {
-    background-color: green;
+    background-color: palegreen;
 }
 
 .sortUp {
-    background-color: red;
+    background-color: pink;
+}
+
+@media (max-width: 500px) {
+    .searchDiv {
+        flex-basis: 100%;
+    }
 }

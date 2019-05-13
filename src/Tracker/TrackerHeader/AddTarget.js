@@ -8,7 +8,7 @@ export default () => {
                 <button
                     onClick={addTarget}
                 >
-                    add target
+                    Add Target
                 </button>
             )}
         </TrackerContext.Consumer>

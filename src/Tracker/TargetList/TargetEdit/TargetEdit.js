@@ -30,15 +30,10 @@ export default () => {
                         onReset={() => editTarget(targets.find(target => target.id === editingTarget.id))}
                     >
                         <CompanyInfoEdit/>
-                        <ContactEdit/>
                         <KeyMetricsEdit/>
+                        <ContactEdit/>
                         <StatusEdit/>
-                        <div>
-                            <input type='submit' value='save'/>
-                            <input type='reset' value='reset'/>
-                            <input type='button' value='cancel'
-                                onClick={() => editTarget({})}
-                                />
+                        <div className='targetEditButtons'>
                             <input type='button' value='delete'
                                 onClick={() => {
                                     if (window.confirm('Are you sure?')) {
@@ -46,6 +41,11 @@ export default () => {
                                     }
                                 }}
                             />
+                            <input type='button' value='cancel'
+                                onClick={() => editTarget({})}
+                            />
+                            <input type='reset' value='reset'/>
+                            <input type='submit' value='save'/>
                         </div>
                     </form>
                 </div>

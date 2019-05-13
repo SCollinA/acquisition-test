@@ -4,8 +4,8 @@ import './Contact.css'
 export default ({ contact }) => {
     return (
         <div className='Contact'>
-            <h1>{contact.name}</h1>
-            <h1>{contact.phoneNumber}</h1>
+            <h3>{contact.name}</h3>
+            <h3>{contact.phoneNumber}</h3>
         </div>
     )
 }
