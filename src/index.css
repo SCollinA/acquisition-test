@@ -16,7 +16,7 @@ button, input {
   border-radius: 2em;
   margin: 1%;
   font-size: 12px;
-  /* text-align: center; */
+  background-color: white;
 }
 
 button:focus, input:focus {
