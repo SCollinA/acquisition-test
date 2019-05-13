@@ -40,11 +40,7 @@ export class Target {
             foundedDate,
             isPublic,
         }
-        this.contacts = [{
-            id: uuid(),
-            name: '',
-            phoneNumber: '',
-        }]
+        this.contacts = []
         this.keyMetrics = {
             revenue,
             cashFlow,
