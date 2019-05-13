@@ -14,9 +14,7 @@ export default ({ target }) => {
                     className='TargetDetail'
                     onClick={() => selectTarget({})}
                 >
-                    {/* {!allDetailsView &&  */}
-                        <TargetEditButton target={target}/>
-                        {/* } */}
+                    <TargetEditButton target={target}/>
                     <div className='infoMetrics'>
                         <CompanyInfoDetail target={target}/>
                         <KeyMetricsDetail target={target}/>
