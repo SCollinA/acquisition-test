@@ -344,7 +344,7 @@ export default class extends React.Component {
             sortTargets,
             removeSort,
             hideSort,
-            sortHidden: false,
+            sortHidden: true,
             allDetailsView: false,
             showAllDetails,
         }

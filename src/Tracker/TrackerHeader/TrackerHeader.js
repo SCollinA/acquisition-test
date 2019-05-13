@@ -11,9 +11,11 @@ export default () => {
         <header className='TrackerHeader'>
             <div className='searchAddDiv'>
                 <SearchTargets/>
-                <ShowAllDetail/>
-                <ChangeSort/>
-                <AddTarget/>
+                <div className='trackerHeaderButtons'>
+                    <ShowAllDetail/>
+                    <ChangeSort/>
+                    <AddTarget/>
+                </div>
             </div>
             <SortTargets/>
         </header>
