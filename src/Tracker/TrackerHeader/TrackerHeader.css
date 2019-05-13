@@ -1,31 +1,34 @@
 .TrackerHeader {
-    margin-bottom: 2%;
+    flex: 0;
 }
 
-.searchAddDiv {
+/* .searchAddDiv {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
+} */
 
-.searchAddDiv > * {
+/* .searchAddDiv > * {
     margin: 2% auto;
-}
+} */
 
 .searchDiv {
-    flex-basis: 40%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.trackerHeaderButtons {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
-.searchDiv > * {
+/* .searchDiv > * {
     margin: auto 5%;
     padding: 2% 5%;
-    /* font-size: 12px; */
     border-radius: 2em;
     min-width: fit-content;
-}
+} */
 
 .SortTargets {
     display: flex;

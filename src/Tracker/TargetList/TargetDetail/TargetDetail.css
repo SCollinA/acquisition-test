@@ -1,12 +1,11 @@
 .TargetDetail {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
     border: solid 2px grey;
     margin: 2%;
-    padding: 5% 2% 2%;
+    padding: 2%;
     cursor: pointer;
     background-color: white;
     border-radius: 10px;
@@ -14,10 +13,7 @@
 }
 
 .editButton {
-    margin: auto 0;
-    position: absolute;
-    top: 0;
-    right: 0;
+    margin-left: auto;
     border-radius: 5px;
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import uuid from 'uuid'
 import './Contact.css'
 
 export default ({ contact }) => {
@@ -8,4 +9,15 @@ export default ({ contact }) => {
             <h3>{contact.phoneNumber}</h3>
         </div>
     )
+}
+
+export class Contact {
+    constructor(
+        name = '',
+        phoneNumber = ''
+    ) {
+        this.id = uuid()
+        this.name = name
+        this.phoneNumber = phoneNumber
+    }
 }

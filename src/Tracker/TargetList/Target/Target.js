@@ -1,4 +1,5 @@
 import React from 'react'
+import uuid from 'uuid'
 import './Target.css'
 import TrackerContext from '../../../Context/TrackerContext'
 
@@ -16,4 +17,46 @@ export default ({ target }) => {
             )}
         </TrackerContext.Consumer>
     )
+}
+
+export const statusTypes = [
+    'Approved',
+    'Pending approval',
+    'Researching',
+    'Denied',
+]
+
+export class Target {
+    constructor(
+        name = '', 
+        address = '',
+        employeesCount = 1,
+        foundedDate = '',
+        isPublic = false,
+        revenue = 0,
+        netIncome = 0,
+        totalEquity = 0,
+        stockPrice = 0,
+        contacts = []
+    ) {
+        this.id = uuid()
+        this.info = {
+            name,
+            address,
+            employeesCount,
+            foundedDate,
+            isPublic,
+        }
+        this.keyMetrics = {
+            revenue,
+            netIncome,
+            totalEquity,
+            stockPrice,
+        }
+        this.contacts = contacts
+        this.status = statusTypes[2]
+        // history: [
+        //     `added ${new Date().toLocaleString()}`
+        // ]
+    }
 }

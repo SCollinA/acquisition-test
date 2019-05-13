@@ -10,9 +10,9 @@
   justify-content: space-around;
   flex-wrap: wrap;
   color: white;
-  margin-bottom: 2%;
+  flex: 0;
 }
 
-.App-header > h1 {
+/* .App-header > h1 {
   margin: 2% auto;
-}
+} */

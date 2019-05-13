@@ -46,7 +46,7 @@ export default () => {
                         />
                     </label>
                     <label htmlFor='employeesCount'>
-                        Employees Count
+                        Employees Count: {editingTarget.info.employeesCount.toLocaleString()}
                         <input 
                             type='number' 
                             name='employeesCount'

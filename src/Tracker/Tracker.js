@@ -1,18 +1,12 @@
 import React from 'react'
-import uuid from 'uuid'
+// import uuid from 'uuid'
 import './Tracker.css'
 import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from './TrackerHeader/TrackerHeader'
 import TargetList from './TargetList/TargetList'
+import { Target, statusTypes } from './TargetList/Target/Target'
 
 import mockTargets from '../mockTargets'
-
-export const statusTypes = [
-    'Approved',
-    'Pending approval',
-    'Researching',
-    'Denied',
-]
 
 export default class extends React.Component {
     constructor(props) {
@@ -20,31 +14,7 @@ export default class extends React.Component {
         // change below methods to post to backend 
 
         const addTarget = () => {
-            const newTarget = {
-                id: uuid(),
-                info: {
-                    name: '',
-                    address: '',
-                    employeesCount: 1,
-                    foundedDate: '',
-                    isPublic: false,
-                },
-                contacts: [{
-                    id: uuid(),
-                    name: '',
-                    phoneNumber: '',
-                }],
-                keyMetrics: {
-                    revenue: 0,
-                    cashFlow: 0,
-                    valuation: 0,
-                    stockPrice: 0,
-                },
-                status: statusTypes[2],
-                // history: [
-                //     `added ${new Date().toLocaleString()}`
-                // ]
-            }
+            const newTarget = new Target()
             this.setState({
                 targets: [
                     ...this.state.targets,
@@ -214,18 +184,6 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
-                                    // case 'isPublic':
-                                    //     console.log(
-                                    //         'sorting by isPublic',
-                                    //         a.info.isPublic,
-                                    //         b.info.isPublic
-                                    //     )
-                                    //     if (b.info.isPublic || !a.info.isPublic) {
-                                    //         order++
-                                    //     } else {
-                                    //         order--
-                                    //     }
-                                    //     break
                                     case 'revenue':
                                         console.log(
                                             'sorting by revenue',
@@ -238,25 +196,25 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
-                                    case 'cashFlow':
+                                    case 'netIncome':
                                         console.log(
-                                            'sorting by cashFlow',
-                                            a.keyMetrics.cashFlow,
-                                            b.keyMetrics.cashFlow
+                                            'sorting by netIncome',
+                                            a.keyMetrics.netIncome,
+                                            b.keyMetrics.netIncome
                                         )
-                                        if (a.keyMetrics.cashFlow <= b.keyMetrics.cashFlow) {
+                                        if (a.keyMetrics.netIncome <= b.keyMetrics.netIncome) {
                                             order++
                                         } else {
                                             order--
                                         }
                                         break
-                                    case 'valuation':
+                                    case 'totalEquity':
                                         console.log(
-                                            'sorting by valuation',
-                                            a.keyMetrics.valuation,
-                                            b.keyMetrics.valuation
+                                            'sorting by totalEquity',
+                                            a.keyMetrics.totalEquity,
+                                            b.keyMetrics.totalEquity
                                         )
-                                        if (a.keyMetrics.valuation <= b.keyMetrics.valuation) {
+                                        if (a.keyMetrics.totalEquity <= b.keyMetrics.totalEquity) {
                                             order++
                                         } else {
                                             order--
@@ -344,19 +302,20 @@ export default class extends React.Component {
             sortTargets,
             removeSort,
             hideSort,
-            sortHidden: false,
+            sortHidden: true,
             allDetailsView: false,
             showAllDetails,
         }
     }
 
+    componentDidMount() {
+        this.state.sortTargets()
+    }
+
     render() {
         return (
             <TrackerContext.Provider value={this.state}>
-                <div 
-                    className='Tracker'
-                    // onLoad={({ target }) => console.log(target)}
-                >
+                <div className='Tracker'>
                     <TrackerHeader/>
                     <TargetList/>
                 </div>

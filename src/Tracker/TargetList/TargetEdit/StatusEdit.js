@@ -1,6 +1,6 @@
 import React from 'react'
 import TrackerContext from '../../../Context/TrackerContext'
-import { statusTypes } from '../../Tracker'
+import { statusTypes } from '../Target/Target'
 
 export default () => {
     return (

@@ -5,10 +5,15 @@
 }
 
 .Login > * {
-    margin: 2%;
+    margin: 2% auto;
 }
 
 .loginButtons {
     display: flex;
     justify-content: space-evenly;
+}
+
+.loginButtons > * {
+    margin: 0 5%;
+    padding: 5%;
 }

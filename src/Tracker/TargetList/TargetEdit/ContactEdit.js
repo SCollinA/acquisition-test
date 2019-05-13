@@ -1,6 +1,6 @@
 import React from 'react'
-import uuid from 'uuid'
 import TrackerContext from '../../../Context/TrackerContext'
+import { Contact } from '../Contact/Contact'
 
 export default () => {
     return (
@@ -66,11 +66,7 @@ export default () => {
                                 ...editingTarget,
                                 contacts: [
                                     ...editingTarget.contacts,
-                                    { 
-                                        id: uuid(),
-                                        name: '',
-                                        phoneNumber: '',
-                                    }
+                                    new Contact()
                                 ]
                             })
                         }}
