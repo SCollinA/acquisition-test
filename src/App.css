@@ -10,7 +10,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   color: white;
-  flex: 0;
+  /* flex: 0; */
 }
 
 /* .App-header > h1 {
