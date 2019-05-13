@@ -4,6 +4,8 @@
 !/Target/*
 !/Target/**/*
 
+/screenshots
+
 secretPW.js
 
 # dependencies
