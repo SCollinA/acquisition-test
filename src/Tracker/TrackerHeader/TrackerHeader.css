@@ -32,6 +32,7 @@
 .SortTargets > * {
     flex-basis: 20%;
     background-color: lightyellow;
+    white-space: nowrap;
 }
 
 .sortDown {

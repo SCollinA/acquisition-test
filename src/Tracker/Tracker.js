@@ -315,6 +315,14 @@ export default class extends React.Component {
             sortList: []
         }, () => this.state.sortTargets())
 
+        const hideSort = () => this.setState({
+            sortHidden: !this.state.sortHidden,
+        }, () => {
+            if (this.state.sortHidden) {
+                this.state.removeSort()
+            }
+        })
+
         const showAllDetails = () => this.setState({
             allDetailsView: !this.state.allDetailsView
         })
@@ -336,6 +344,8 @@ export default class extends React.Component {
             addSortObject,
             sortTargets,
             removeSort,
+            hideSort,
+            sortHidden: false,
             allDetailsView: false,
             showAllDetails,
         }
