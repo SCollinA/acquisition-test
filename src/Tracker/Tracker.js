@@ -4,16 +4,9 @@ import './Tracker.css'
 import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from './TrackerHeader/TrackerHeader'
 import TargetList from './TargetList/TargetList'
-import { Target } from './TargetList/Target/Target'
+import { Target, statusTypes } from './TargetList/Target/Target'
 
 import mockTargets from '../mockTargets'
-
-export const statusTypes = [
-    'Approved',
-    'Pending approval',
-    'Researching',
-    'Denied',
-]
 
 export default class extends React.Component {
     constructor(props) {

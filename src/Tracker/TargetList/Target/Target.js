@@ -2,7 +2,6 @@ import React from 'react'
 import uuid from 'uuid'
 import './Target.css'
 import TrackerContext from '../../../Context/TrackerContext'
-import { statusTypes } from '../../Tracker'
 
 export default ({ target }) => {
     return (
@@ -20,6 +19,13 @@ export default ({ target }) => {
     )
 }
 
+export const statusTypes = [
+    'Approved',
+    'Pending approval',
+    'Researching',
+    'Denied',
+]
+
 export class Target {
     constructor(
         name = '', 
@@ -30,7 +36,8 @@ export class Target {
         revenue = 0,
         cashFlow = 0,
         valuation = 0,
-        stockPrice = 0
+        stockPrice = 0,
+        contacts = []
     ) {
         this.id = uuid()
         this.info = {
@@ -40,13 +47,13 @@ export class Target {
             foundedDate,
             isPublic,
         }
-        this.contacts = []
         this.keyMetrics = {
             revenue,
             cashFlow,
             valuation,
             stockPrice,
         }
+        this.contacts = contacts
         this.status = statusTypes[2]
         // history: [
         //     `added ${new Date().toLocaleString()}`
