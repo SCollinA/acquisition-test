@@ -52,7 +52,7 @@ export default () => {
                                         })
                                     }
                                 }}
-                                value='Remove Contact'
+                                value='Remove'
                             />
                         </div>
                     ))}
