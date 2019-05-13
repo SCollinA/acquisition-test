@@ -1,9 +1,10 @@
 import React from 'react'
-import uuid from 'uuid'
+// import uuid from 'uuid'
 import './Tracker.css'
 import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from './TrackerHeader/TrackerHeader'
 import TargetList from './TargetList/TargetList'
+import { Target } from './TargetList/Target/Target'
 
 import mockTargets from '../mockTargets'
 
@@ -20,31 +21,7 @@ export default class extends React.Component {
         // change below methods to post to backend 
 
         const addTarget = () => {
-            const newTarget = {
-                id: uuid(),
-                info: {
-                    name: '',
-                    address: '',
-                    employeesCount: 1,
-                    foundedDate: '',
-                    isPublic: false,
-                },
-                contacts: [{
-                    id: uuid(),
-                    name: '',
-                    phoneNumber: '',
-                }],
-                keyMetrics: {
-                    revenue: 0,
-                    cashFlow: 0,
-                    valuation: 0,
-                    stockPrice: 0,
-                },
-                status: statusTypes[2],
-                // history: [
-                //     `added ${new Date().toLocaleString()}`
-                // ]
-            }
+            const newTarget = new Target()
             this.setState({
                 targets: [
                     ...this.state.targets,
