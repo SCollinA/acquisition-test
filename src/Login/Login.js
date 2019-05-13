@@ -32,8 +32,10 @@ export default ({ setIsLoggedIn }) => {
                 autoComplete={'current-password'}
                 autoFocus
             />
-            <input type='submit' name='submit' value='Login'/>
-            <input type='reset' name='reset' value='Reset'/>
+            <div className='loginButtons'>
+                <input type='reset' name='reset' value='Reset'/>
+                <input type='submit' name='submit' value='Login'/>
+            </div>
         </form>
     )
 }

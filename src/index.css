@@ -23,6 +23,6 @@ button:focus, input:focus {
   outline: none;
 }
 
-button:active, input[button]:active {
+button:active, input[type='button']:active {
   background-color: lightgrey;
 }
