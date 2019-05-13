@@ -1,10 +1,14 @@
 .Login {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: 30% auto auto;
+}
+
+.Login > * {
+    margin: 2%;
 }
 
 .loginButtons {
     display: flex;
+    justify-content: space-evenly;
 }
