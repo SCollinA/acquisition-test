@@ -24,7 +24,7 @@ export default () => {
                                 }}
                             />
                             <input 
-                                type='text' 
+                                type='tel' 
                                 name='contactPhone'
                                 placeholder='Phone Number'
                                 value={contact.phoneNumber}

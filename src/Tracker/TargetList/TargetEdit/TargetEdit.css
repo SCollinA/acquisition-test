@@ -36,6 +36,15 @@
     flex-direction: column;
 }
 
+.infoMetricsEdit {
+    display: flex;
+    justify-content: space-around;
+}
+
+.infoMetricsEdit > * {
+    flex: 1;
+}
+
 .StatusEdit > label {
     margin: auto;
     width: fit-content;
@@ -55,15 +64,6 @@
     flex-basis: 20%;
 }
 
-@media (max-width: 500px) {
-    .contactEditInputs {
-        flex-direction: column;
-    }
-    .contactEditInputs > * {
-        margin: auto;
-    }
-}
-
 .addContact {
     display: block;
     margin: auto;
@@ -73,4 +73,17 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+    .infoMetricsEdit {
+        flex-direction: column;
+    }
+
+    .contactEditInputs {
+        flex-direction: column;
+    }
+    .contactEditInputs > * {
+        margin: auto;
+    }
 }
