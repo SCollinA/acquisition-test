@@ -16,13 +16,11 @@
     flex-basis: 40%;
     display: flex;
     justify-content: space-around;
-    /* flex-wrap: wrap; */
 }
 
 .searchDiv > * {
     margin: auto 5%;
     padding: 2% 5%;
-    /* font-size: 12px; */
     border-radius: 2em;
     min-width: fit-content;
 }

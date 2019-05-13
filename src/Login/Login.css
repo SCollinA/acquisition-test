@@ -9,7 +9,11 @@
 }
 
 .loginButtons {
-    margin: 2% 25%;
     display: flex;
     justify-content: space-evenly;
+}
+
+.loginButtons > * {
+    margin: 0 5%;
+    padding: 5%;
 }
