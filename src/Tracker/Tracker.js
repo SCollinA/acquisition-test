@@ -353,8 +353,13 @@ export default class extends React.Component {
     render() {
         return (
             <TrackerContext.Provider value={this.state}>
-                <TrackerHeader/>
-                <TargetList/>
+                <div 
+                    className='Tracker'
+                    // onLoad={({ target }) => console.log(target)}
+                >
+                    <TrackerHeader/>
+                    <TargetList/>
+                </div>
             </TrackerContext.Provider>
         )
     }
