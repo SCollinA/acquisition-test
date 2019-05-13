@@ -25,35 +25,35 @@ export default () => {
                             }}
                         />
                     </label>
-                    <label htmlFor='cashFlow'>
-                        Cash Flow: ${editingTarget.keyMetrics.cashFlow.toLocaleString()}
+                    <label htmlFor='netIncome'>
+                        Net Income: ${editingTarget.keyMetrics.netIncome.toLocaleString()}
                         <input 
                             type='number'
-                            name='cashFlow'
-                            value={editingTarget.keyMetrics.cashFlow}
+                            name='netIncome'
+                            value={editingTarget.keyMetrics.netIncome}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
                                     keyMetrics: {
                                         ...editingTarget.keyMetrics,
-                                        cashFlow: parseFloat(target.value)
+                                        netIncome: parseFloat(target.value)
                                     }
                                 })
                             }}
                         />
                     </label>            
-                    <label htmlFor='valuation'>
-                        Valuation: ${editingTarget.keyMetrics.valuation.toLocaleString()}
+                    <label htmlFor='totalEquity'>
+                        Total Equity: ${editingTarget.keyMetrics.totalEquity.toLocaleString()}
                         <input 
                             type='number'
-                            name='valuation'
-                            value={editingTarget.keyMetrics.valuation}
+                            name='totalEquity'
+                            value={editingTarget.keyMetrics.totalEquity}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
                                     keyMetrics: {
                                         ...editingTarget.keyMetrics,
-                                        valuation: parseFloat(target.value)
+                                        totalEquity: parseFloat(target.value)
                                     }
                                 })
                             }}

@@ -34,8 +34,8 @@ export class Target {
         foundedDate = '',
         isPublic = false,
         revenue = 0,
-        cashFlow = 0,
-        valuation = 0,
+        netIncome = 0,
+        totalEquity = 0,
         stockPrice = 0,
         contacts = []
     ) {
@@ -49,8 +49,8 @@ export class Target {
         }
         this.keyMetrics = {
             revenue,
-            cashFlow,
-            valuation,
+            netIncome,
+            totalEquity,
             stockPrice,
         }
         this.contacts = contacts

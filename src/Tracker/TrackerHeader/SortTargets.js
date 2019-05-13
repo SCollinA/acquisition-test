@@ -78,23 +78,6 @@ export default () => {
                             {sortClassesObject.foundedDate &&
                                 sortClassesObject.foundedDate[1]}
                         </button>
-                        {/* <button
-                            className={
-                                `sortIsPublic` +
-                                `${sortClassesObject.isPublic !== undefined ?
-                                    sortClassesObject.isPublic[0] === true ?
-                                    ' activeSort sortDown' :
-                                    ' activeSort sortUp' :
-                                    ''}`
-                            }
-                            onClick={() => {
-                                addSortObject('isPublic')
-                            }}
-                        >
-                            Public
-                            {sortClassesObject.isPublic &&
-                                sortClassesObject.isPublic[1]}
-                        </button> */}
                         <button
                             className={
                                 `sortRevenue` +
@@ -114,37 +97,37 @@ export default () => {
                         </button>
                         <button
                             className={
-                                `sortCashFlow` +
-                                `${sortClassesObject.cashFlow !== undefined ?
-                                    sortClassesObject.cashFlow[0] === true ?
+                                `sortNetIncome` +
+                                `${sortClassesObject.netIncome !== undefined ?
+                                    sortClassesObject.netIncome[0] === true ?
                                     ' activeSort sortDown' :
                                     ' activeSort sortUp' :
                                     ''}`
                             }
                             onClick={() => {
-                                addSortObject('cashFlow')
+                                addSortObject('netIncome')
                             }}
                         >
                             Cash Flow
-                            {sortClassesObject.cashFlow &&
-                                sortClassesObject.cashFlow[1]}
+                            {sortClassesObject.netIncome &&
+                                sortClassesObject.netIncome[1]}
                         </button>
                         <button
                             className={
-                                `sortValuation` +
-                                `${sortClassesObject.valuation !== undefined ?
-                                    sortClassesObject.valuation[0] === true ?
+                                `sortTotalEquity` +
+                                `${sortClassesObject.totalEquity !== undefined ?
+                                    sortClassesObject.totalEquity[0] === true ?
                                     ' activeSort sortDown' :
                                     ' activeSort sortUp' :
                                     ''}`
                             }
                             onClick={() => {
-                                addSortObject('valuation')
+                                addSortObject('totalEquity')
                             }}
                         >
-                            Valuation
-                            {sortClassesObject.valuation &&
-                                sortClassesObject.valuation[1]}
+                            totalEquity
+                            {sortClassesObject.totalEquity &&
+                                sortClassesObject.totalEquity[1]}
                         </button>
                         <button
                             className={

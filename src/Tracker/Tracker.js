@@ -184,18 +184,6 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
-                                    // case 'isPublic':
-                                    //     console.log(
-                                    //         'sorting by isPublic',
-                                    //         a.info.isPublic,
-                                    //         b.info.isPublic
-                                    //     )
-                                    //     if (b.info.isPublic || !a.info.isPublic) {
-                                    //         order++
-                                    //     } else {
-                                    //         order--
-                                    //     }
-                                    //     break
                                     case 'revenue':
                                         console.log(
                                             'sorting by revenue',
@@ -208,25 +196,25 @@ export default class extends React.Component {
                                             order--
                                         }
                                         break
-                                    case 'cashFlow':
+                                    case 'netIncome':
                                         console.log(
-                                            'sorting by cashFlow',
-                                            a.keyMetrics.cashFlow,
-                                            b.keyMetrics.cashFlow
+                                            'sorting by netIncome',
+                                            a.keyMetrics.netIncome,
+                                            b.keyMetrics.netIncome
                                         )
-                                        if (a.keyMetrics.cashFlow <= b.keyMetrics.cashFlow) {
+                                        if (a.keyMetrics.netIncome <= b.keyMetrics.netIncome) {
                                             order++
                                         } else {
                                             order--
                                         }
                                         break
-                                    case 'valuation':
+                                    case 'totalEquity':
                                         console.log(
-                                            'sorting by valuation',
-                                            a.keyMetrics.valuation,
-                                            b.keyMetrics.valuation
+                                            'sorting by totalEquity',
+                                            a.keyMetrics.totalEquity,
+                                            b.keyMetrics.totalEquity
                                         )
-                                        if (a.keyMetrics.valuation <= b.keyMetrics.valuation) {
+                                        if (a.keyMetrics.totalEquity <= b.keyMetrics.totalEquity) {
                                             order++
                                         } else {
                                             order--
