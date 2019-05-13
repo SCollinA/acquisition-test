@@ -11,115 +11,127 @@ export default [
     {
         id: uuid(),
         info: {
-            name: 'target 1',
-            address: '123 Main St., New York City, NY, 11111',
-            employeesCount: 3,
-            foundedDate: '1-1-1970',
+            name: 'Google',
+            address: '1600 Amphitheatre Parkway, Mountain View, California',
+            employeesCount: 98771,
+            foundedDate: 'September 4, 1998',
             isPublic: true,
         },
-        contacts: [{ 
-            id: uuid(),
-            name: 'new contact',
-            phoneNumber: '',
-        }],
+        contacts: [
+            { 
+                id: uuid(),
+                name: 'Larry Page',
+                phoneNumber: '',
+            },
+            { 
+                id: uuid(),
+                name: 'Sergey Brin',
+                phoneNumber: '',
+            },
+        ],
         keyMetrics: {
             revenue: 100000000,
             cashFlow: 10,
             valuation: 100000,
-            stockPrice: 25,
+            stockPrice: 1164.27,
         },
-        status: statusTypes[0],
-        history: [
-            `added ${new Date().toLocaleString()}`
-        ]
+        status: statusTypes[2],
+        // history: [
+        //     `added ${new Date().toLocaleString()}`
+        // ]
     },
     {
         id: uuid(),
         info: {
-            name: 'target 2',
-            address: '125 Main St., Los Angeles, California, 11111',
-            employeesCount: 3,
-            foundedDate: '12-25-2018',
-            isPublic: false,
+            name: 'Amazon',
+            address: '410 Terry Ave. North, Seattle, WA',
+            employeesCount: 647500,
+            foundedDate: 'July 5, 1994',
+            isPublic: true,
         },        
         contacts: [{ 
             id: uuid(),
-            name: 'new contact',
+            name: 'Jeff Bezos',
             phoneNumber: '',
         }],
         keyMetrics: {
-            revenue: 9999999,
+            revenue: 232887000000,
             cashFlow: -1000,
             valuation: 1000000000,
-            stockPrice: 45,
+            stockPrice: 1889.98,
         },
-        status: statusTypes[1],
-        history: [
-            `added ${new Date().toLocaleString()}`
-        ]
+        status: statusTypes[3],
+        // history: [
+        //     `added ${new Date().toLocaleString()}`
+        // ]
     },
     {
         id: uuid(),
         info: {
-            name: 'target 3',
-            address: '127 Main St., Los Angeles, California, 11111',
-            employeesCount: 3,
-            foundedDate: '12-1-2017',
+            name: 'Apple',
+            address: '1 Apple Park Way, Cupertino, California',
+            employeesCount: 132000,
+            foundedDate: 'April 1, 1976',
             isPublic: true,
         },        
         contacts: [
             { 
                 id: uuid(),
-                name: 'new contact',
+                name: 'Steve Jobs',
                 phoneNumber: '',
             },
             { 
                 id: uuid(),
-                name: 'new contact',
+                name: 'Steve Wozniak',
+                phoneNumber: '',
+            },
+            { 
+                id: uuid(),
+                name: 'Ronald Wayne',
                 phoneNumber: '',
             },
         ],
         keyMetrics: {
-            revenue: 2,
+            revenue: 265595000000,
             cashFlow: 1000,
             valuation: 2000000000,
-            stockPrice: 45,
+            stockPrice: 197.18,
         },
-        status: statusTypes[2],
-        history: [
-            `added ${new Date().toLocaleString()}`
-        ]
+        status: statusTypes[1],
+        // history: [
+        //     `added ${new Date().toLocaleString()}`
+        // ]
     },
     {
         id: uuid(),
         info: {
-            name: 'target 4',
-            address: '127 Main St., Los Angeles, California, 11111',
-            employeesCount: 3,
-            foundedDate: '12-1-2018',
-            isPublic: false,
+            name: 'Microsoft',
+            address: 'One Microsoft Way, Redmond, Washington',
+            employeesCount: 134944,
+            foundedDate: 'April 4, 1975',
+            isPublic: true,
         },        
         contacts: [
             { 
                 id: uuid(),
-                name: 'new contact',
+                name: 'Bill Gates',
                 phoneNumber: '',
             },
             { 
                 id: uuid(),
-                name: 'new contact',
+                name: 'Paul Allen',
                 phoneNumber: '',
             },
         ],
         keyMetrics: {
-            revenue: 300,
-            cashFlow: -100,
-            valuation: 1000,
-            stockPrice: 45,
+            revenue: 110360000000,
+            cashFlow: 0,
+            valuation: 0,
+            stockPrice: 127.13,
         },
-        status: statusTypes[3],
-        history: [
-            `added ${new Date().toLocaleString()}`
-        ]
+        status: statusTypes[0],
+        // history: [
+        //     `added ${new Date().toLocaleString()}`
+        // ]
     },
 ]
