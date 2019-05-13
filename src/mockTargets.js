@@ -8,9 +8,9 @@ export default [
         98771,
         'September 4, 1998',
         true,
-        100000000,
-        10,
-        100000,
+        0,
+        0,
+        0,
         1164.27,
         [
             new Contact('Larry Page'),
@@ -24,8 +24,8 @@ export default [
         'July 5, 1994',
         true,
         232887000000,
-        -1000,
-        1000000000,
+        10073000000,
+        43549000000,
         1889.98,
         [
             new Contact('Jeff Bezos')
@@ -38,8 +38,8 @@ export default [
         'April 1, 1976',
         true,
         265595000000,
-        1000,
-        2000000000,
+        59531000000,
+        107147000000,
         197.18,
         [
             new Contact('Steve Jobs'),
@@ -54,8 +54,8 @@ export default [
         'April 4, 1975',
         true,
         110360000000,
-        0,
-        0,
+        16570000000,
+        82710000000,
         127.13,
         [
             new Contact('Bill Gates'),
