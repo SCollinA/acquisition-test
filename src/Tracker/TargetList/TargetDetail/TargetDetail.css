@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     border: solid 2px grey;
     margin: 2%;
+    padding: 5% 2% 2%;
     cursor: pointer;
     background-color: white;
     border-radius: 10px;

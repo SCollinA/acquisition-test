@@ -13,6 +13,7 @@ export default () => {
                             type='text' 
                             name='name'
                             id='name'
+                            placeholder='target name'
                             value={editingTarget.info.name}
                             onChange={({ target }) => {
                                 editTarget({
@@ -31,6 +32,7 @@ export default () => {
                             type='text' 
                             name='address'
                             id='address'
+                            placeholder='target address'
                             value={editingTarget.info.address}
                             onChange={({ target }) => {
                                 editTarget({
@@ -67,6 +69,7 @@ export default () => {
                             type='text' 
                             name='foundedDate'
                             id='foundedDate'
+                            placeholder='date founded'
                             value={editingTarget.info.foundedDate}
                             onChange={({ target }) => {
                                 editTarget({

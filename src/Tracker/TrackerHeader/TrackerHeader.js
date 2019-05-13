@@ -4,7 +4,7 @@ import SearchTargets from './SearchTargets';
 import SortTargets from './SortTargets';
 import AddTarget from './AddTarget';
 import ShowAllDetail from './ShowAllDetail';
-import RemoveSort from './RemoveSort';
+import ChangeSort from './ChangeSort';
 
 export default () => {
     return (
@@ -12,7 +12,7 @@ export default () => {
             <div className='searchAddDiv'>
                 <SearchTargets/>
                 <ShowAllDetail/>
-                <RemoveSort/>
+                <ChangeSort/>
                 <AddTarget/>
             </div>
             <SortTargets/>

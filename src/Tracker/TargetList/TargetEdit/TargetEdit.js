@@ -29,8 +29,10 @@ export default () => {
                         }}
                         onReset={() => editTarget(targets.find(target => target.id === editingTarget.id))}
                     >
-                        <CompanyInfoEdit/>
-                        <KeyMetricsEdit/>
+                        <div className='infoMetricsEdit'>
+                            <CompanyInfoEdit/>
+                            <KeyMetricsEdit/>
+                        </div>
                         <ContactEdit/>
                         <StatusEdit/>
                         <div className='targetEditButtons'>

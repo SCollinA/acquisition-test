@@ -8,7 +8,7 @@ export default () => {
                 <fieldset className='KeyMetricsEdit'>
                     <legend>Key Metrics</legend>
                     <label htmlFor='revenue'>
-                        Revenue
+                        Revenue: ${editingTarget.keyMetrics.revenue.toLocaleString()}
                         <input 
                             type='number'
                             name='revenue'
@@ -19,14 +19,14 @@ export default () => {
                                     ...editingTarget,
                                     keyMetrics: {
                                         ...editingTarget.keyMetrics,
-                                        revenue: target.value
+                                        revenue: parseFloat(target.value)
                                     }
                                 })
                             }}
-                        />   
+                        />
                     </label>
                     <label htmlFor='cashFlow'>
-                        Cash Flow
+                        Cash Flow: ${editingTarget.keyMetrics.cashFlow.toLocaleString()}
                         <input 
                             type='number'
                             name='cashFlow'
@@ -36,14 +36,14 @@ export default () => {
                                     ...editingTarget,
                                     keyMetrics: {
                                         ...editingTarget.keyMetrics,
-                                        cashFlow: target.value
+                                        cashFlow: parseFloat(target.value)
                                     }
                                 })
                             }}
-                        />         
+                        />
                     </label>            
                     <label htmlFor='valuation'>
-                        Valuation
+                        Valuation: ${editingTarget.keyMetrics.valuation.toLocaleString()}
                         <input 
                             type='number'
                             name='valuation'
@@ -53,15 +53,15 @@ export default () => {
                                     ...editingTarget,
                                     keyMetrics: {
                                         ...editingTarget.keyMetrics,
-                                        valuation: target.value
+                                        valuation: parseFloat(target.value)
                                     }
                                 })
                             }}
-                        />            
+                        />
                     </label>      
                     {editingTarget.info.isPublic && (
                         <label htmlFor='stockPrice'>
-                            Stock Price
+                            Stock Price: ${editingTarget.keyMetrics.stockPrice.toLocaleString()}
                             <input 
                                 type='number'
                                 name='stockPrice'
@@ -71,7 +71,7 @@ export default () => {
                                         ...editingTarget,
                                         keyMetrics: {
                                             ...editingTarget.keyMetrics,
-                                            stockPrice: target.value
+                                            stockPrice: parseFloat(target.value)
                                         }
                                     })
                                 }}

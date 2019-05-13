@@ -8,6 +8,10 @@
     flex-wrap: wrap;
 }
 
+.searchAddDiv > * {
+    margin: 2% auto;
+}
+
 .searchDiv {
     flex-basis: 40%;
     display: flex;
@@ -18,7 +22,7 @@
 .searchDiv > * {
     margin: auto 5%;
     padding: 2% 5%;
-    font-size: 12px;
+    /* font-size: 12px; */
     border-radius: 2em;
     min-width: fit-content;
 }
@@ -32,6 +36,7 @@
 .SortTargets > * {
     flex-basis: 20%;
     background-color: lightyellow;
+    white-space: nowrap;
 }
 
 .sortDown {
@@ -45,5 +50,9 @@
 @media (max-width: 500px) {
     .searchDiv {
         flex-basis: 100%;
+    }
+
+    .SortTargets > * {
+        flex-basis: 25%;
     }
 }

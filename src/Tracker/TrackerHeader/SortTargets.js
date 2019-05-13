@@ -4,7 +4,7 @@ import TrackerContext from '../../Context/TrackerContext'
 export default () => {
     return (
         <TrackerContext.Consumer>
-            {({ addSortObject, sortList }) => {
+            {({ addSortObject, sortList, sortHidden }) => {
                 const sortClassesObject = {}
                 // loop through sortList
                 sortList.forEach((sortObject, index) => {
@@ -25,7 +25,7 @@ export default () => {
                 // from sortClassesObject
                 // into appropriate input classname
                 // if field value exists
-                return (
+                return !sortHidden && (
                     <div className='SortTargets'>
                         <button
                             className={

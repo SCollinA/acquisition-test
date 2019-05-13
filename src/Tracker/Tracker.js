@@ -23,21 +23,24 @@ export default class extends React.Component {
             const newTarget = {
                 id: uuid(),
                 info: {
-                    name: 'new target',
-                    address: '123 Main St., New York City, NY, 10101',
+                    name: '',
+                    address: '',
                     employeesCount: 1,
-                    foundedDate: '1-1-18',
+                    foundedDate: '',
                     isPublic: false,
                 },
                 contacts: [{
                     id: uuid(),
-                    name: 'new contact',
+                    name: '',
                     phoneNumber: '',
                 }],
                 keyMetrics: {
-                    revenue: 100000000,
+                    revenue: 0,
+                    cashFlow: 0,
+                    valuation: 0,
+                    stockPrice: 0,
                 },
-                status: statusTypes[0],
+                status: statusTypes[2],
                 // history: [
                 //     `added ${new Date().toLocaleString()}`
                 // ]
@@ -315,6 +318,10 @@ export default class extends React.Component {
             sortList: []
         }, () => this.state.sortTargets())
 
+        const hideSort = () => this.setState({
+            sortHidden: !this.state.sortHidden,
+        })
+
         const showAllDetails = () => this.setState({
             allDetailsView: !this.state.allDetailsView
         })
@@ -336,6 +343,8 @@ export default class extends React.Component {
             addSortObject,
             sortTargets,
             removeSort,
+            hideSort,
+            sortHidden: false,
             allDetailsView: false,
             showAllDetails,
         }
@@ -344,8 +353,13 @@ export default class extends React.Component {
     render() {
         return (
             <TrackerContext.Provider value={this.state}>
-                <TrackerHeader/>
-                <TargetList/>
+                <div 
+                    className='Tracker'
+                    // onLoad={({ target }) => console.log(target)}
+                >
+                    <TrackerHeader/>
+                    <TargetList/>
+                </div>
             </TrackerContext.Provider>
         )
     }

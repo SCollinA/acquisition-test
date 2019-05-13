@@ -4,14 +4,16 @@ import TrackerContext from '../../Context/TrackerContext'
 export default () => {
     return (
         <TrackerContext.Consumer>
-            {({ showAllDetails }) => (
+            {({ showAllDetails, allDetailsView }) => (
                 <button
                     className='ShowAllDetails'
                     onClick={() => {
                         showAllDetails()
                     }}
                 >
-                    Show All Details
+                    {!allDetailsView ?
+                        'Show' :
+                        'Hide'} All Details
                 </button>
             )}
         </TrackerContext.Consumer>
