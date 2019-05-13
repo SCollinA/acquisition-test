@@ -108,7 +108,7 @@ export default () => {
                                 addSortObject('netIncome')
                             }}
                         >
-                            Cash Flow
+                            Net Income
                             {sortClassesObject.netIncome &&
                                 sortClassesObject.netIncome[1]}
                         </button>
@@ -125,7 +125,7 @@ export default () => {
                                 addSortObject('totalEquity')
                             }}
                         >
-                            totalEquity
+                            Total Equity
                             {sortClassesObject.totalEquity &&
                                 sortClassesObject.totalEquity[1]}
                         </button>
