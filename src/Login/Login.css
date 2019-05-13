@@ -5,10 +5,11 @@
 }
 
 .Login > * {
-    margin: 2%;
+    margin: 2% auto;
 }
 
 .loginButtons {
+    margin: 2% 25%;
     display: flex;
     justify-content: space-evenly;
 }
