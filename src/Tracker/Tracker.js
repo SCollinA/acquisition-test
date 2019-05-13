@@ -317,11 +317,12 @@ export default class extends React.Component {
 
         const hideSort = () => this.setState({
             sortHidden: !this.state.sortHidden,
-        }, () => {
-            if (this.state.sortHidden) {
-                this.state.removeSort()
-            }
         })
+        // , () => {
+        //     if (this.state.sortHidden) {
+        //         this.state.removeSort()
+        //     }
+        // })
 
         const showAllDetails = () => this.setState({
             allDetailsView: !this.state.allDetailsView
