@@ -36,8 +36,11 @@ export default class extends React.Component {
                 }],
                 keyMetrics: {
                     revenue: 0,
+                    cashFlow: 0,
+                    valuation: 0,
+                    stockPrice: 0,
                 },
-                status: statusTypes[0],
+                status: statusTypes[2],
                 // history: [
                 //     `added ${new Date().toLocaleString()}`
                 // ]
