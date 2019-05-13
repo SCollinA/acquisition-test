@@ -350,6 +350,10 @@ export default class extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.state.sortTargets()
+    }
+
     render() {
         return (
             <TrackerContext.Provider value={this.state}>
