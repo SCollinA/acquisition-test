@@ -23,19 +23,19 @@ export default class extends React.Component {
             const newTarget = {
                 id: uuid(),
                 info: {
-                    name: 'new target',
-                    address: '123 Main St., New York City, NY, 10101',
+                    name: '',
+                    address: '',
                     employeesCount: 1,
-                    foundedDate: '1-1-18',
+                    foundedDate: '',
                     isPublic: false,
                 },
                 contacts: [{
                     id: uuid(),
-                    name: 'new contact',
+                    name: '',
                     phoneNumber: '',
                 }],
                 keyMetrics: {
-                    revenue: 100000000,
+                    revenue: 0,
                 },
                 status: statusTypes[0],
                 // history: [
@@ -318,11 +318,6 @@ export default class extends React.Component {
         const hideSort = () => this.setState({
             sortHidden: !this.state.sortHidden,
         })
-        // , () => {
-        //     if (this.state.sortHidden) {
-        //         this.state.removeSort()
-        //     }
-        // })
 
         const showAllDetails = () => this.setState({
             allDetailsView: !this.state.allDetailsView
