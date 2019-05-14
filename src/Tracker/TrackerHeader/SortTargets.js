@@ -20,7 +20,6 @@ export default () => {
                         // into an object
                     }
                 })
-
                 // then interpolate corresponding field
                 // from sortClassesObject
                 // into appropriate input classname
@@ -32,8 +31,8 @@ export default () => {
                                 `sortName` +
                                 `${sortClassesObject.name !== undefined ?
                                     sortClassesObject.name[0] === true ?
-                                        ' activeSort sortDown' :
-                                        ' activeSort sortUp' :
+                                        ' sortDown' :
+                                        ' sortUp' :
                                     ''}`
                             }
                             onClick={() => {
@@ -49,8 +48,8 @@ export default () => {
                                 `sortEmployeesCount` +
                                 `${sortClassesObject.employeesCount !== undefined ?
                                     sortClassesObject.employeesCount[0] === true ?
-                                        ' activeSort sortDown' :
-                                        ' activeSort sortUp' :
+                                        ' sortDown' :
+                                        ' sortUp' :
                                     ''}`
                             }                            
                             onClick={() => {
@@ -66,9 +65,9 @@ export default () => {
                                 `sortFoundedDate` +
                                 `${sortClassesObject.foundedDate !== undefined ?
                                     sortClassesObject.foundedDate[0] === true ?
-                                    ' activeSort sortDown' :
-                                    ' activeSort sortUp' :
-                                    ''}`
+                                    ' sortDown' :
+                                    ' sortUp' :
+                                ''}`
                             }
                             onClick={() => {
                                 addSortObject('foundedDate')
@@ -83,9 +82,9 @@ export default () => {
                                 `sortRevenue` +
                                 `${sortClassesObject.revenue !== undefined ?
                                     sortClassesObject.revenue[0] === true ?
-                                    ' activeSort sortDown' :
-                                    ' activeSort sortUp' :
-                                    ''}`
+                                    ' sortDown' :
+                                    ' sortUp' :
+                                ''}`
                             }
                             onClick={() => {
                                 addSortObject('revenue')
@@ -100,9 +99,9 @@ export default () => {
                                 `sortNetIncome` +
                                 `${sortClassesObject.netIncome !== undefined ?
                                     sortClassesObject.netIncome[0] === true ?
-                                    ' activeSort sortDown' :
-                                    ' activeSort sortUp' :
-                                    ''}`
+                                    ' sortDown' :
+                                    ' sortUp' :
+                                ''}`
                             }
                             onClick={() => {
                                 addSortObject('netIncome')
@@ -117,9 +116,9 @@ export default () => {
                                 `sortTotalEquity` +
                                 `${sortClassesObject.totalEquity !== undefined ?
                                     sortClassesObject.totalEquity[0] === true ?
-                                    ' activeSort sortDown' :
-                                    ' activeSort sortUp' :
-                                    ''}`
+                                    ' sortDown' :
+                                    ' sortUp' :
+                                ''}`
                             }
                             onClick={() => {
                                 addSortObject('totalEquity')
@@ -134,9 +133,9 @@ export default () => {
                                 `sortStockPrice` +
                                 `${sortClassesObject.stockPrice !== undefined ?
                                     sortClassesObject.stockPrice[0] === true ?
-                                    ' activeSort sortDown' :
-                                    ' activeSort sortUp' :
-                                    ''}`
+                                    ' sortDown' :
+                                    ' sortUp' :
+                                ''}`
                             }
                             onClick={() => {
                                 addSortObject('stockPrice')
@@ -151,9 +150,9 @@ export default () => {
                                 `sortStatus` +
                                 `${sortClassesObject.status !== undefined ?
                                     sortClassesObject.status[0] === true ?
-                                        ' activeSort sortDown' :
-                                        ' activeSort sortUp' :
-                                    ''}`
+                                        ' sortDown' :
+                                        ' sortUp' :
+                                ''}`
                             }                            
                             onClick={() => {
                                 addSortObject('status')

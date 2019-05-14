@@ -55,8 +55,5 @@ export class Target {
         }
         this.contacts = contacts || []
         this.status = statusTypes[2]
-        // history: [
-        //     `added ${new Date().toLocaleString()}`
-        // ]
     }
 }

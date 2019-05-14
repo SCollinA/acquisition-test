@@ -20,7 +20,7 @@ export default [
         employeesCount: 647500,
         foundedDate: 'July 5, 1994',
         isPublic: true,
-        revenue: -232887000000,
+        revenue: 232887000000,
         netIncome: 10073000000,
         totalEquity: 43549000000,
         stockPrice: 1889.98,

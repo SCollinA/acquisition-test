@@ -9,7 +9,7 @@ import CompanyInfoDetail from './CompanyInfoDetail';
 export default ({ target }) => {
     return (
         <TrackerContext.Consumer>
-            {({ selectTarget, allDetailsView }) => (
+            {({ selectTarget }) => (
                 <div 
                     className='TargetDetail'
                     onClick={() => selectTarget({})}
@@ -26,11 +26,6 @@ export default ({ target }) => {
                             ))}
                         </div>}
                     <h2>{target.status}</h2>
-                    {/* {target.history.map((historyEntry, index) => (
-                        <h2 className='historyEntry' key={index}>
-                            {historyEntry}
-                        </h2>
-                    ))} */}
                 </div>
             )}
         </TrackerContext.Consumer>

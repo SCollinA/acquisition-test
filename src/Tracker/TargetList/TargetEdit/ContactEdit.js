@@ -9,8 +9,8 @@ export default () => {
                 <fieldset className='ContactEdit'>
                     <legend>Contacts</legend>
                     {editingTarget.contacts &&
-                    editingTarget.contacts.map((contact, index) => (
-                        <div key={index} className='contactEditInputs'>
+                    editingTarget.contacts.map(contact => (
+                        <div key={contact.id} className='contactEditInputs'>
                             <input
                                 type='text' 
                                 name='contactName'
@@ -43,6 +43,7 @@ export default () => {
                             <input
                                 type='button'
                                 className='removeContact'
+                                value='Remove'
                                 onClick={event => {
                                     event.stopPropagation()
                                     if (window.confirm('Are you sure?')) {
@@ -56,7 +57,6 @@ export default () => {
                                         })
                                     }
                                 }}
-                                value='Remove'
                             />
                         </div>
                     ))}

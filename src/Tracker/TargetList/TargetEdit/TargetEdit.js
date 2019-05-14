@@ -25,11 +25,7 @@ export default () => {
                         onClick={event => event.stopPropagation()}
                         onSubmit={event => {
                             event.preventDefault()
-                            // if (new Date(editingTarget.info.foundedDate).toString() === 'Invalid Date') {
-                            //     window.alert('Invalid Date')
-                            // } else {
-                                saveTarget()
-                            // }
+                            saveTarget()
                         }}
                         onReset={() => editTarget(targets.find(target => target.id === editingTarget.id))}
                     >

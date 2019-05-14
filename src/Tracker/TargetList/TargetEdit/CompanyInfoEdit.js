@@ -52,8 +52,8 @@ export default () => {
                             type='number' 
                             name='employeesCount'
                             id='employeesCount'
-                            // placeholder='0'
                             value={editingTarget.info.employeesCount || 0}
+                            min='0'
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,

@@ -1,5 +1,4 @@
 import React from 'react'
-// import uuid from 'uuid'
 import './Tracker.css'
 import TrackerContext from '../Context/TrackerContext'
 import TrackerHeader from './TrackerHeader/TrackerHeader'
@@ -12,7 +11,6 @@ export default class extends React.Component {
     constructor(props) {
         super(props)
         // change below methods to post to backend 
-
         const addTarget = () => {
             const newTarget = new Target({})
             this.setState({
@@ -55,14 +53,9 @@ export default class extends React.Component {
                     return contact.name.toLowerCase().includes(lowerCaseTerm)
                 })
                 return target.info.name.toLowerCase().includes(lowerCaseTerm) ||
-                target.info.address.toLowerCase().includes(lowerCaseTerm) ||
-                contactFound
+                    target.info.address.toLowerCase().includes(lowerCaseTerm) ||
+                    contactFound
             })
-            console.log(
-                'search term and results',
-                searchTerm, 
-                searchingTargets,
-            )
             this.setState({
                 searchTerm,
                 searchingTargets
@@ -71,25 +64,16 @@ export default class extends React.Component {
 
         const addSortObject = field => {
             // loop through sort list
-            console.log('what is field', field)
             // looking at each object
             for (let i = 0; i < this.state.sortList.length; i++) {
                 const sortObject = this.state.sortList[i]
                 // if object is for this property and true
-                console.log('what is sort object', sortObject)
                 if (sortObject[field] === true) {
                     // toggle value to desc
                     sortObject[field] = false
-                    // this.state.sortList.splice(i, 1, sortObject)
                     this.setState({
                         sortList: this.state.sortList
-                    }, () => {
-                        sortTargets()
-                        console.log(
-                            'toggled current sort object',
-                            this.state.sortList
-                        )
-                    })
+                    }, () => sortTargets())
                     return
                 // else if object is for this property and false
                 } else if (sortObject[field] === false) {
@@ -97,51 +81,31 @@ export default class extends React.Component {
                     this.state.sortList.splice(i, 1)
                     this.setState({
                         sortList: this.state.sortList
-                    }, () => {
-                        sortTargets()
-                        console.log(
-                            'removed current sort object', 
-                            this.state.sortList
-                        )
-                    })
+                    }, () => sortTargets())
                     return
                 }
             }
+            // no sort object for this field found in sort list
             const newSortObject = {}
             newSortObject[field] = true
-            // else add this property object
             this.setState({
                 sortList: [
                     ...this.state.sortList,
                     newSortObject
                 ]
-            }, () => {
-                console.log('added new sort object', this.state.sortList)
-                sortTargets()
-            })
+            }, () => sortTargets())
         }
 
         const sortTargets = () => {
             this.setState({
                 targets: this.state.targets.sort((a, b) => {
                     let order = 0
-                    console.log('sorting targets')
                     if (this.state.sortList.length > 0) {
-                        console.log('sorting by sortList')
+                        // loop through sort objects
                         for (const sortObject of this.state.sortList) {
-                            console.log('what is sortObject', sortObject)
-                            // loop through sort objects
                             // get only field from sort object
                             // and it's value (true or false)
                             for (const field in sortObject) {
-                                console.log(
-                                    'what is field',
-                                    field,
-                                    'and value',
-                                    sortObject[field],
-                                    'and order',
-                                    order
-                                )
                                 // sign must be hoisted out of for loop
                                 // if sortObject[field] === false, order is desc
                                 var sign = sortObject[field] ?
@@ -149,11 +113,6 @@ export default class extends React.Component {
                                 // then use switch to sort correct field
                                 switch(field) {
                                     case 'name':
-                                        console.log(
-                                            'sorting by name',
-                                            a.info.name, 
-                                            b.info.name
-                                        )
                                         if (a.info.name > b.info.name) {
                                             order++                                        
                                         } else {
@@ -161,11 +120,6 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'employeesCount':
-                                        console.log(
-                                            'sorting by employeesCount',
-                                            a.info.employeesCount, 
-                                            b.info.employeesCount
-                                        )
                                         if (a.info.employeesCount <= b.info.employeesCount) {
                                             order++
                                         } else {
@@ -173,11 +127,6 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'foundedDate':
-                                        console.log(
-                                            'sorting by foundedDate',
-                                            a.info.foundedDate,
-                                            b.info.foundedDate
-                                        )
                                         if (new Date(a.info.foundedDate) < new Date(b.info.foundedDate)) {
                                             order++
                                         } else {
@@ -185,11 +134,6 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'revenue':
-                                        console.log(
-                                            'sorting by revenue',
-                                            a.keyMetrics.revenue,
-                                            b.keyMetrics.revenue
-                                        )
                                         if (a.keyMetrics.revenue <= b.keyMetrics.revenue) {
                                             order++
                                         } else {
@@ -197,11 +141,6 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'netIncome':
-                                        console.log(
-                                            'sorting by netIncome',
-                                            a.keyMetrics.netIncome,
-                                            b.keyMetrics.netIncome
-                                        )
                                         if (a.keyMetrics.netIncome <= b.keyMetrics.netIncome) {
                                             order++
                                         } else {
@@ -209,11 +148,6 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'totalEquity':
-                                        console.log(
-                                            'sorting by totalEquity',
-                                            a.keyMetrics.totalEquity,
-                                            b.keyMetrics.totalEquity
-                                        )
                                         if (a.keyMetrics.totalEquity <= b.keyMetrics.totalEquity) {
                                             order++
                                         } else {
@@ -221,13 +155,6 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'stockPrice':
-                                        console.log(
-                                            'sorting by stockPrice',
-                                            a.keyMetrics.stockPrice,
-                                            b.keyMetrics.stockPrice,
-                                            a.info.isPublic,
-                                            b.info.isPublic,
-                                        )
                                         if (a.info.isPublic && !b.info.isPublic) {
                                             order--
                                         } else if (!a.info.isPublic && b.info.isPublic) {
@@ -239,11 +166,6 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'status':
-                                        console.log(
-                                            'sorting by status',
-                                            a.status, 
-                                            b.status
-                                        )
                                         if (statusTypes.indexOf(a.status) > statusTypes.indexOf(b.status)) {
                                             order++
                                         } else {
@@ -255,12 +177,10 @@ export default class extends React.Component {
                             }
                             order *= sign
                         }
-                        console.log(order)
                         return order
                     } else {
-                        // if this.state.sortList was empty
-                        // code will reach this line
-                        // and default sort by name
+                        // this.state.sortList was empty
+                        // default sort by name
                         if (a.info.name > b.info.name) {
                             order = 1
                         } else {
@@ -285,7 +205,7 @@ export default class extends React.Component {
         })
 
         this.state = {
-            targets: mockTargets,
+            targets: [],
             addTarget,
             selectTarget,
             editTarget,
@@ -293,7 +213,6 @@ export default class extends React.Component {
             deleteTarget,
             selectedTarget: {},
             editingTarget: {},
-            // comparingTargets: [],
             searchTerm: '',
             updateSearchTerm,
             searchingTargets: [],
@@ -303,13 +222,15 @@ export default class extends React.Component {
             removeSort,
             hideSort,
             sortHidden: true,
-            allDetailsView: false,
             showAllDetails,
+            allDetailsView: false,
         }
     }
 
     componentDidMount() {
-        this.state.sortTargets()
+        this.setState({
+            targets: mockTargets
+        }, () => this.state.sortTargets())
     }
 
     render() {
