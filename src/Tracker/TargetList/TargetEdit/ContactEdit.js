@@ -68,7 +68,7 @@ export default () => {
                                 contacts: [
                                     ...editingTarget.contacts,
                                     new Contact()
-                                ]
+                                ].sort(compareContacts)
                             })
                         }}
                     />
@@ -76,4 +76,14 @@ export default () => {
             )}
         </TrackerContext.Consumer>
     )
+}
+
+function compareContacts(a, b) {
+    if (a.name > b.name) {
+        return -1
+    } else if (b.name > a.name) {
+        return 1
+    } else {
+        return 0
+    }
 }

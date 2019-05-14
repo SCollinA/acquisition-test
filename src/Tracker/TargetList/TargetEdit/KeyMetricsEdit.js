@@ -14,13 +14,13 @@ export default () => {
                             type='number'
                             name='revenue'
                             id='revenue'
-                            value={editingTarget.keyMetrics.revenue}
+                            value={editingTarget.keyMetrics.revenue || 0}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
                                     keyMetrics: {
                                         ...editingTarget.keyMetrics,
-                                        revenue: parseFloat(target.value)
+                                        revenue: parseFloat(target.value) || 0
                                     }
                                 })
                             }}
@@ -32,13 +32,13 @@ export default () => {
                         <input 
                             type='number'
                             name='netIncome'
-                            value={editingTarget.keyMetrics.netIncome}
+                            value={editingTarget.keyMetrics.netIncome || 0}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
                                     keyMetrics: {
                                         ...editingTarget.keyMetrics,
-                                        netIncome: parseFloat(target.value)
+                                        netIncome: parseFloat(target.value) || 0
                                     }
                                 })
                             }}
@@ -50,13 +50,13 @@ export default () => {
                         <input 
                             type='number'
                             name='totalEquity'
-                            value={editingTarget.keyMetrics.totalEquity}
+                            value={editingTarget.keyMetrics.totalEquity || 0}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
                                     keyMetrics: {
                                         ...editingTarget.keyMetrics,
-                                        totalEquity: parseFloat(target.value)
+                                        totalEquity: parseFloat(target.value) || 0
                                     }
                                 })
                             }}
@@ -69,13 +69,13 @@ export default () => {
                             <input 
                                 type='number'
                                 name='stockPrice'
-                                value={editingTarget.keyMetrics.stockPrice}
+                                value={editingTarget.keyMetrics.stockPrice || 0}
                                 onChange={({ target }) => {
                                     editTarget({
                                         ...editingTarget,
                                         keyMetrics: {
                                             ...editingTarget.keyMetrics,
-                                            stockPrice: parseFloat(target.value)
+                                            stockPrice: parseFloat(target.value) || 0
                                         }
                                     })
                                 }}

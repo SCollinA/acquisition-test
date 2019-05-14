@@ -14,7 +14,7 @@ export default () => {
                             name='name'
                             id='name'
                             placeholder='target name'
-                            value={editingTarget.info.name}
+                            value={editingTarget.info.name || ''}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
@@ -33,7 +33,7 @@ export default () => {
                             name='address'
                             id='address'
                             placeholder='target address'
-                            value={editingTarget.info.address}
+                            value={editingTarget.info.address || ''}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
@@ -52,13 +52,14 @@ export default () => {
                             type='number' 
                             name='employeesCount'
                             id='employeesCount'
-                            value={editingTarget.info.employeesCount}
+                            // placeholder='0'
+                            value={editingTarget.info.employeesCount || 0}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
                                     info: {
                                         ...editingTarget.info,
-                                        employeesCount: target.value,
+                                        employeesCount: parseInt(target.value) || 0,
                                     }
                                 })
                             }}
@@ -71,7 +72,7 @@ export default () => {
                             name='foundedDate'
                             id='foundedDate'
                             placeholder='date founded'
-                            value={editingTarget.info.foundedDate}
+                            value={editingTarget.info.foundedDate || ''}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,

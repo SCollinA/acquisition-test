@@ -53,7 +53,7 @@ export class Target {
             totalEquity,
             stockPrice,
         }
-        this.contacts = contacts
+        this.contacts = contacts || []
         this.status = statusTypes[2]
         // history: [
         //     `added ${new Date().toLocaleString()}`
