@@ -27,18 +27,18 @@ export const statusTypes = [
 ]
 
 export class Target {
-    constructor(
-        name = '', 
-        address = '',
-        employeesCount = 1,
-        foundedDate = '',
-        isPublic = false,
-        revenue = 0,
-        netIncome = 0,
-        totalEquity = 0,
-        stockPrice = 0,
-        contacts = []
-    ) {
+    constructor({
+        name, 
+        address,
+        employeesCount,
+        foundedDate,
+        isPublic,
+        revenue,
+        netIncome,
+        totalEquity,
+        stockPrice,
+        contacts
+    }) {
         this.id = uuid()
         this.info = {
             name,
