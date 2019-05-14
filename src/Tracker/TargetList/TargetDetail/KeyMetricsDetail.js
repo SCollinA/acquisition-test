@@ -11,12 +11,12 @@ export default ({ target }) => {
             {!target.keyMetrics.netIncome ||
                 <h4>
                     Net Income: {target.keyMetrics.netIncome < 0 && '-'}
-                    ${target.keyMetrics.netIncome.toLocaleString()}
+                    ${Math.abs(target.keyMetrics.netIncome).toLocaleString()}
                 </h4>}
             {!target.keyMetrics.totalEquity ||
                 <h4>
                     Total Equity: {target.keyMetrics.totalEquity < 0 && '-'}
-                    ${target.keyMetrics.totalEquity.toLocaleString()}
+                    ${Math.abs(target.keyMetrics.totalEquity).toLocaleString()}
                 </h4>}
             {(target.info.isPublic && 
                 target.keyMetrics.stockPrice !== 0 &&
