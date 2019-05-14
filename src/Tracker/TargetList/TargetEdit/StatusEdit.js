@@ -20,8 +20,8 @@ export default () => {
                         <input 
                             type='radio'
                             name='status'
-                            value='researching'
-                            defaultChecked={editingTarget.status === statusTypes[0]}
+                            value='Researching'
+                            defaultChecked={editingTarget.status === statusTypes[2]}
                         />
                         Researching
                     </label>
@@ -29,7 +29,7 @@ export default () => {
                         <input 
                             type='radio'
                             name='status'
-                            value='pending approval'
+                            value='Pending approval'
                             defaultChecked={editingTarget.status === statusTypes[1]}
                         />
                         Pending approval
@@ -38,8 +38,8 @@ export default () => {
                         <input 
                             type='radio'
                             name='status'
-                            value='approved'
-                            defaultChecked={editingTarget.status === statusTypes[2]}
+                            value='Approved'
+                            defaultChecked={editingTarget.status === statusTypes[0]}
                         />
                         Approved
                     </label>
@@ -47,7 +47,7 @@ export default () => {
                         <input 
                             type='radio'
                             name='status'
-                            value='denied'
+                            value='Denied'
                             defaultChecked={editingTarget.status === statusTypes[3]}
                         />
                         Denied

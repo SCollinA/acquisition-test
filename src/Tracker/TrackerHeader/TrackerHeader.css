@@ -2,16 +2,6 @@
     flex: 0;
 }
 
-/* .searchAddDiv {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-} */
-
-/* .searchAddDiv > * {
-    margin: 2% auto;
-} */
-
 .searchDiv {
     display: flex;
     justify-content: space-around;
@@ -23,12 +13,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-/* .searchDiv > * {
-    margin: auto 5%;
-    padding: 2% 5%;
-    border-radius: 2em;
-    min-width: fit-content;
-} */
 
 .SortTargets {
     display: flex;

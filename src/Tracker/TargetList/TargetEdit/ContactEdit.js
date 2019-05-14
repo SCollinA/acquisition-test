@@ -8,8 +8,9 @@ export default () => {
             {({ editingTarget, editTarget }) => (
                 <fieldset className='ContactEdit'>
                     <legend>Contacts</legend>
-                    {editingTarget.contacts.map((contact, index) => (
-                        <div key={index} className='contactEditInputs'>
+                    {editingTarget.contacts &&
+                    editingTarget.contacts.map(contact => (
+                        <div key={contact.id} className='contactEditInputs'>
                             <input
                                 type='text' 
                                 name='contactName'
@@ -29,6 +30,9 @@ export default () => {
                                 placeholder='Phone Number'
                                 value={contact.phoneNumber}
                                 onChange={({ target }) => {
+                                    for (const char of target.value) {
+                                        if (isNaN(parseInt(char))) return
+                                    }
                                     contact.phoneNumber = target.value
                                     editTarget({
                                         ...editingTarget,
@@ -39,6 +43,7 @@ export default () => {
                             <input
                                 type='button'
                                 className='removeContact'
+                                value='Remove'
                                 onClick={event => {
                                     event.stopPropagation()
                                     if (window.confirm('Are you sure?')) {
@@ -52,7 +57,6 @@ export default () => {
                                         })
                                     }
                                 }}
-                                value='Remove'
                             />
                         </div>
                     ))}

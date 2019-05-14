@@ -14,7 +14,7 @@ export default () => {
                             name='name'
                             id='name'
                             placeholder='target name'
-                            value={editingTarget.info.name}
+                            value={editingTarget.info.name || ''}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
@@ -33,7 +33,7 @@ export default () => {
                             name='address'
                             id='address'
                             placeholder='target address'
-                            value={editingTarget.info.address}
+                            value={editingTarget.info.address || ''}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
@@ -46,31 +46,33 @@ export default () => {
                         />
                     </label>
                     <label htmlFor='employeesCount'>
-                        Employees Count: {editingTarget.info.employeesCount.toLocaleString()}
+                        Employees Count: {editingTarget.info.employeesCount &&
+                             editingTarget.info.employeesCount.toLocaleString()}
                         <input 
                             type='number' 
                             name='employeesCount'
                             id='employeesCount'
-                            value={editingTarget.info.employeesCount}
+                            value={editingTarget.info.employeesCount || 0}
+                            min='0'
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
                                     info: {
                                         ...editingTarget.info,
-                                        employeesCount: target.value,
+                                        employeesCount: parseInt(target.value) || 0,
                                     }
                                 })
                             }}
                         />
                     </label>
                     <label htmlFor='foundedDate'>
-                        Founded Date
+                        Founded Date: {new Date(editingTarget.info.foundedDate).toLocaleDateString()}
                         <input 
                             type='text' 
                             name='foundedDate'
                             id='foundedDate'
                             placeholder='date founded'
-                            value={editingTarget.info.foundedDate}
+                            value={editingTarget.info.foundedDate || ''}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,
@@ -88,7 +90,7 @@ export default () => {
                             type='checkbox' 
                             name='isPublic'
                             id='isPublic'
-                            checked={editingTarget.info.isPublic}
+                            checked={editingTarget.info.isPublic || false}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,

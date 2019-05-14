@@ -19,6 +19,18 @@ button, input {
   width: fit-content;
   font-size: 1em;
   background-color: white;
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type='text'], 
+input[type='password'], 
+input[type='tel'], 
+input[type='number'] {
+  cursor: text;
 }
 
 button:focus, input:focus {
