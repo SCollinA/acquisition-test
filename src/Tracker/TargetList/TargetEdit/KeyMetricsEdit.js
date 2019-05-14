@@ -8,7 +8,8 @@ export default () => {
                 <fieldset className='KeyMetricsEdit'>
                     <legend>Key Metrics</legend>
                     <label htmlFor='revenue'>
-                        Revenue: ${editingTarget.keyMetrics.revenue.toLocaleString()}
+                        Revenue: ${editingTarget.keyMetrics.revenue &&
+                            editingTarget.keyMetrics.revenue.toLocaleString()}
                         <input 
                             type='number'
                             name='revenue'
@@ -26,7 +27,8 @@ export default () => {
                         />
                     </label>
                     <label htmlFor='netIncome'>
-                        Net Income: ${editingTarget.keyMetrics.netIncome.toLocaleString()}
+                        Net Income: ${editingTarget.keyMetrics.netIncome &&
+                            editingTarget.keyMetrics.netIncome.toLocaleString()}
                         <input 
                             type='number'
                             name='netIncome'
@@ -43,7 +45,8 @@ export default () => {
                         />
                     </label>            
                     <label htmlFor='totalEquity'>
-                        Total Equity: ${editingTarget.keyMetrics.totalEquity.toLocaleString()}
+                        Total Equity: ${editingTarget.keyMetrics.totalEquity &&
+                            editingTarget.keyMetrics.totalEquity.toLocaleString()}
                         <input 
                             type='number'
                             name='totalEquity'
@@ -61,7 +64,8 @@ export default () => {
                     </label>      
                     {editingTarget.info.isPublic && (
                         <label htmlFor='stockPrice'>
-                            Stock Price: ${editingTarget.keyMetrics.stockPrice.toLocaleString()}
+                            Stock Price: ${editingTarget.keyMetrics.stockPrice &&
+                                editingTarget.keyMetrics.stockPrice.toLocaleString()}
                             <input 
                                 type='number'
                                 name='stockPrice'

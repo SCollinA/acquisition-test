@@ -19,11 +19,12 @@ export default ({ target }) => {
                         <CompanyInfoDetail target={target}/>
                         <KeyMetricsDetail target={target}/>
                     </div>
-                    <div className='contactsDetail'>
-                        {target.contacts.map((contact, index) => (
-                            <Contact key={index} contact={contact}/>
-                        ))}
-                    </div>
+                    {target.contacts &&
+                        <div className='contactsDetail'>
+                            {target.contacts.map((contact, index) => (
+                                <Contact key={index} contact={contact}/>
+                            ))}
+                        </div>}
                     <h2>{target.status}</h2>
                     {/* {target.history.map((historyEntry, index) => (
                         <h2 className='historyEntry' key={index}>

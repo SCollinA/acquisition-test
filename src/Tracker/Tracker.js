@@ -14,7 +14,7 @@ export default class extends React.Component {
         // change below methods to post to backend 
 
         const addTarget = () => {
-            const newTarget = new Target()
+            const newTarget = new Target({})
             this.setState({
                 targets: [
                     ...this.state.targets,

@@ -8,7 +8,8 @@ export default () => {
             {({ editingTarget, editTarget }) => (
                 <fieldset className='ContactEdit'>
                     <legend>Contacts</legend>
-                    {editingTarget.contacts.map((contact, index) => (
+                    {editingTarget.contacts &&
+                    editingTarget.contacts.map((contact, index) => (
                         <div key={index} className='contactEditInputs'>
                             <input
                                 type='text' 

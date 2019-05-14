@@ -46,7 +46,8 @@ export default () => {
                         />
                     </label>
                     <label htmlFor='employeesCount'>
-                        Employees Count: {editingTarget.info.employeesCount.toLocaleString()}
+                        Employees Count: {editingTarget.info.employeesCount &&
+                             editingTarget.info.employeesCount.toLocaleString()}
                         <input 
                             type='number' 
                             name='employeesCount'
@@ -88,7 +89,7 @@ export default () => {
                             type='checkbox' 
                             name='isPublic'
                             id='isPublic'
-                            checked={editingTarget.info.isPublic}
+                            checked={editingTarget.info.isPublic || false}
                             onChange={({ target }) => {
                                 editTarget({
                                     ...editingTarget,

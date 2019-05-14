@@ -7,7 +7,7 @@ export default ({ target }) => {
             <h4>{target.info.address || 'No Address'}</h4>
             {target.info.employeesCount &&
                 <h4>
-                    {`${target.info.employeesCount.toLocaleString()} `}
+                    {target.info.employeesCount.toLocaleString()}
                     Employee{target.info.employeesCount > 1 && 's'}
                 </h4>}
             {target.info.foundedDate && 
@@ -16,7 +16,7 @@ export default ({ target }) => {
                 </h4>}
             {target.info.isPublic && 
                 <h4>
-                    'Publicly Traded'
+                    Publicly Traded
                 </h4>}
         </div>
     )
