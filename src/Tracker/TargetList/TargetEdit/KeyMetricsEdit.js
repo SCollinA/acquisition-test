@@ -70,6 +70,7 @@ export default () => {
                                 type='number'
                                 name='stockPrice'
                                 value={editingTarget.keyMetrics.stockPrice || 0}
+                                min='0'
                                 onChange={({ target }) => {
                                     editTarget({
                                         ...editingTarget,
