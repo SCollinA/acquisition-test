@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Acquisition Tracker
 
-## Available Scripts
+## For Devs
 
-In the project directory, you can run:
+### Clone the repo
+`git clone git@github.com:SCollinA/acquisition-tracker.git`<br>
+### Navigate to the directory
+`cd acquisition-tracker`<br>
+### Install dependencies (just React)
+`npm i`<br>
+### Start application in development mode (runs on http://localhost:3000/ by default)
+`npm start`<br>
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## For Users
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Login
+The password is "password1"
+Press return or click 'Login'
 
-### `npm test`
+### Search for target companies
+Type a target company name, address, or contact name into the search box to return a list of matching companies. Click the 'Clear' button to clear the search box.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### See all details for all target companies
+Click 'Show All Details' and scroll through the list.
 
-### `npm run build`
+### Sort target companies
+- Click 'Show Sort' - sort options are displayed.<br>
+- Click appropriate options to sort target companies.<br>
+- Clicking once sorts targets in descending order (A to Z for Name, largest to smallest for numeric values, and most recent to least recent for Date). The sort option will display green.<br>
+- Clicking twice sorts targets in ascending order. The sort option will display red.<br>
+- A third click will remove that sort option. The sort option will return to yellow.<br>
+- Sort options are applied in the order they are selected (which is displayed next to the option name). In other words, each target company will be compared to the next target company on each option selected. If one is sorted first on one option but second on the other, no change will be made in their order.<br>
+- Click 'Remove Sort' to remove all sort options.<br>
+- Click 'Hide Sort' to hide the sort options.<br>
+- It is helpful to use 'Show All Details' while sorting in order to view the fields being sorted on for all target companies.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Add new target company
+- Click 'Add Target'. A modal is displayed with fields for entering information about the company. All fields other than status are optional, however, 'No Name' and 'No Address' will be displayed in the list if they are not provided, as this is basic information for the target company.
+- Click 'Add Contact' to add a contact for this company. Name and phone number fields are provided, and both are optional. Click 'Remove' to remove this contact.
+- Click 'Delete' to remove the target company entirely. A confirmation will appear, as this action cannot be undone.
+- Click 'Cancel' to undo any changes and exit the edit modal.
+- Click 'Reset' to undo any changes and remain in the edit modal.
+- Click 'Save', or click outside the modal, to save changes to the target company.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### View details of a target company
+- Click any target company to view it's details.
+- Clicking 'Edit' will open the same modal as when you add a new company, but pre-filled with the target company's information.
+- Clicking the target company again will collapse it's detailed view.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Future Enhancements
+### Compare select targets
+Select several targets for comparison, then click 'Compare Targets' to view charts and graphs showing the information for each company side-by-side.
+### Add data points over time
+Add new data points for target companies with a timestamp to see how a target company grows over time.
+### View a history of updates to target companies
+After every edit, a log entry will be made detailing the changes made to the target company. See a history of the changes to the target company's information and status.

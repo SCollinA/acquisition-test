@@ -20,7 +20,7 @@ export default class extends React.Component {
                 ],
                 selectedTarget: newTarget,
                 editingTarget: newTarget, 
-            })
+            }, () => sortTargets())
         }
 
         const selectTarget = selectedTarget => this.setState({
