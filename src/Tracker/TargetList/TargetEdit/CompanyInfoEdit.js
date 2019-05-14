@@ -64,7 +64,7 @@ export default () => {
                         />
                     </label>
                     <label htmlFor='foundedDate'>
-                        Founded Date
+                        Founded Date: {new Date(editingTarget.info.foundedDate).toLocaleDateString()}
                         <input 
                             type='text' 
                             name='foundedDate'
