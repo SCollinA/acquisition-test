@@ -30,6 +30,9 @@ export default () => {
                                 placeholder='Phone Number'
                                 value={contact.phoneNumber}
                                 onChange={({ target }) => {
+                                    for (const char of target.value) {
+                                        if (isNaN(parseInt(char))) return
+                                    }
                                     contact.phoneNumber = target.value
                                     editTarget({
                                         ...editingTarget,
