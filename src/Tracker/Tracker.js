@@ -156,7 +156,11 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'totalEquity':
-                                        if (a.keyMetrics.totalEquity <= b.keyMetrics.totalEquity) {
+                                        if (!a.keyMetrics.totalEquity && b.keyMetrics.totalEquity) {
+                                            order++
+                                        } else if (a.keyMetrics.totalEquity && !b.keyMetrics.totalEquity) {
+                                            order--
+                                        } else if (a.keyMetrics.totalEquity <= b.keyMetrics.totalEquity) {
                                             order++
                                         } else {
                                             order--
