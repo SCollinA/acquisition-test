@@ -145,7 +145,11 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'netIncome':
-                                        if (a.keyMetrics.netIncome <= b.keyMetrics.netIncome) {
+                                        if (!a.keyMetrics.netIncome && b.keyMetrics.netIncome) {
+                                            order++
+                                        } else if (a.keyMetrics.netIncome && !b.keyMetrics.netIncome) {
+                                            order--
+                                        } else if (a.keyMetrics.netIncome <= b.keyMetrics.netIncome) {
                                             order++
                                         } else {
                                             order--
