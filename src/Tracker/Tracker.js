@@ -134,7 +134,11 @@ export default class extends React.Component {
                                         }
                                         break
                                     case 'revenue':
-                                        if (a.keyMetrics.revenue <= b.keyMetrics.revenue) {
+                                        if (!a.keyMetrics.revenue && b.keyMetrics.revenue) {
+                                            order++
+                                        } else if (a.keyMetrics.revenue && !b.keyMetrics.revenue) {
+                                            order--
+                                        } else if (a.keyMetrics.revenue <= b.keyMetrics.revenue) {
                                             order++
                                         } else {
                                             order--
@@ -189,7 +193,7 @@ export default class extends React.Component {
                         return order
                     }
                 })
-            })
+            }, () => console.log(this.state.targets))
         }
 
         const removeSort = () => this.setState({
